@@ -1,13 +1,4 @@
-const mergeStyles = (...source) => {
-	const merged = {};
-	source.forEach((style) => {
-		if (style) {
-			Object.keys(style).forEach((key) => {
-				merged[key] = style[key];
-			});
-		}
-	});
-	return merged;
-};
+import merge from "lodash/merge";
 
+const mergeStyles = (...source) => merge({}, ...source);
 export default mergeStyles;
