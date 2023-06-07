@@ -27,14 +27,14 @@ const DEFAULT_STYLE_IMG = {
 	marginLeft: "53px",
 };
 
-const SubVisual = ({ context, outline }) => {
+const SubVisual = ({ context, outline, src }) => {
 	return (
 		<div style={DEFAULT_STYLE}>
 			<div style={DEFAULT_STYLE_TEXT}>
 				<h1 style={DEFAULT_STYLE_H1}>{context}</h1>
 				<p style={DEFAULT_STYLE_P}>{outline}</p>
 			</div>
-			<img style={DEFAULT_STYLE_IMG} src="" alt="" />
+			<img style={DEFAULT_STYLE_IMG} src={src} alt="" />
 		</div>
 	);
 };
