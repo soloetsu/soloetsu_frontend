@@ -1,8 +1,8 @@
 import React from "react";
-import Button from "./components/Button";
-import Text from "./components/Text";
 import "./App.css";
 import "./reset.css";
+import Button from "./components/Button";
+import Text from "./components/Text";
 import Card from "./components/Card";
 
 function App() {
