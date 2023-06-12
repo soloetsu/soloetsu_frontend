@@ -4,6 +4,7 @@ import "./reset.css";
 import Home from "./pages/Home";
 import CardTest from "./pages/CardTest";
 import SubVisualTest from "./pages/SubVisualTest";
+import SliderTest from "./pages/SliderTest";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
 				<Route path="/" element={<Home />} />
 				<Route path="/cardTest" element={<CardTest />} />
 				<Route path="/subVisualTest" element={<SubVisualTest />} />
+				<Route path="/sliderTest" element={<SliderTest />} />
 			</Routes>
 		</Router>
 	);
