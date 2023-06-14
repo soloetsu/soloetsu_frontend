@@ -2,6 +2,7 @@ import React from "react";
 import Button from "./components/Button";
 import Text from "./components/Text";
 import "./App.css";
+import "./reset.css";
 
 function App() {
 	return (
