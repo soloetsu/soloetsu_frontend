@@ -19,18 +19,20 @@ const PickupArea = ({ url, img, context }) => {
 								style={{ maxWidth: "100%", height: "auto", marginBottom: "27px" }}
 							/>
 						</a>
-						<a href={url} style={{ textDecoration: "none" }}>
-							<h3
-								style={{
-									margin: 0,
-									textAlign: "center",
-									overflow: "hidden",
-									textDecoration: "none",
-								}}
-							>
-								カテゴリ名1
-							</h3>
-						</a>
+						<div style={{ textAlign: "center" }}>
+							<div style={{ width: "max-content" }}>
+								<a href={url} style={{ textDecoration: "none" }}>
+									<h3
+										style={{
+											margin: 0,
+											overflow: "hidden",
+										}}
+									>
+										カテゴリ名1
+									</h3>
+								</a>
+							</div>
+						</div>
 					</div>
 
 					<div style={{ marginRight: "38px" }}>
