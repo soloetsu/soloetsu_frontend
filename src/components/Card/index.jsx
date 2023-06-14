@@ -19,10 +19,14 @@ const Card = ({ url, img, context }) => {
 				<a href={url} style={{ textDecoration: "none" }}>
 					<img src={img} alt="画像" style={DEFAULT_IMG} />
 				</a>
-				<div style={{ paddingTop: "23px" }}>
-					<a href={{ url, width: "max-content" }} style={{ textDecoration: "none" }}>
+				<div style={{ paddingTop: "23px", width: "max-content" }}>
+					<a href={url} style={{ textDecoration: "none" }}>
 						<p style={DEFAULT_TEXT}>{context}</p>
 					</a>
+				</div>
+				<div style={{ display: "flex", paddingTop: "10px", width: "max-content" }}>
+					<p style={DEFAULT_TEXT}>#タグ</p>
+					<p style={{ DEFAULT_TEXT, paddingLeft: "23px" }}>#タグ</p>
 				</div>
 			</div>
 		</>
