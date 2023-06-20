@@ -16,6 +16,7 @@ function App() {
 				url="https://www.google.com/"
 				img="https://fujifilmsquare.jp/assets/img/column/column_24_01.jpg"
 				context="カード"
+				tags={["#タグ", "#タグタグタグタグタグタグタグタグタグタグタグタグタグタグタグタグタグタグ", "#タグ"]}
 			/>
 		</>
 	);

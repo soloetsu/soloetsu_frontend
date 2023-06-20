@@ -1,32 +1,41 @@
 import React from "react";
+import SPACING from "@/utils/spacing";
+import FONT_SIZE from "@/utils/fontSize";
+
+const DEFAULT_CARD = {
+	display: "flex",
+	flexDirection: "column",
+	width: "450px",
+};
 
 const DEFAULT_IMG = {
 	display: "flex",
-	// padding: "0 38px 0 0",
 	width: "450px",
 	height: "350px",
-	borderRadius: "0px 20px 0px 20px",
+	borderRadius: "0px 20px 0px",
+	filter: "drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))",
 };
 
-const DEFAULT_TEXT = {
-	fontSize: "1rem",
-};
-
-const Card = ({ url, img, context }) => {
+const Card = ({ url, img, context, tags }) => {
 	return (
 		<>
-			<div style={{ display: "flex", flexDirection: "column", width: "450px" }}>
-				<a href={url} style={{ textDecoration: "none" }}>
+			<div style={DEFAULT_CARD}>
+				<a href={url}>
 					<img src={img} alt="画像" style={DEFAULT_IMG} />
 				</a>
-				<div style={{ paddingTop: "23px", width: "max-content" }}>
-					<a href={url} style={{ textDecoration: "none" }}>
-						<p style={DEFAULT_TEXT}>{context}</p>
+				<div style={{ width: "max-content", marginTop: SPACING["MEDIUM"] }}>
+					<a href={url}>
+						<p style={{ fontSize: FONT_SIZE["MEDIUM"] }}>{context}</p>
 					</a>
 				</div>
-				<div style={{ display: "flex", paddingTop: "10px", width: "max-content" }}>
-					<p style={DEFAULT_TEXT}>#タグ</p>
-					<p style={{ DEFAULT_TEXT, paddingLeft: "23px" }}>#タグ</p>
+				<div style={{ display: "flex", marginTop: SPACING["SMALL"] }}>
+					<p>
+						{tags.map((tag, index) => (
+							<span style={{ fontSize: FONT_SIZE["SMALL"], marginRight: SPACING["MEDIUM"] }} key={index}>
+								{tag}
+							</span>
+						))}
+					</p>
 				</div>
 			</div>
 		</>
