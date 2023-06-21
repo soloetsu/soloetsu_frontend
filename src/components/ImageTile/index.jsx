@@ -82,7 +82,7 @@ const ImageTile = () => {
 		<>
 			<div style={PLANNAME}>プラン名</div>
 			<div style={OVERVIEW}>プラン概要～～～～～～～～～～～～～～</div>
-			<a href="https://cdn.pixabay.com/photo/2023/06/08/22/35/foxtail-grass-8050497_1280.jpg">
+			<a href="">
 				<img
 					src="https://cdn.pixabay.com/photo/2023/06/08/22/35/foxtail-grass-8050497_1280.jpg"
 					alt="大画像"
@@ -90,7 +90,7 @@ const ImageTile = () => {
 				/>
 			</a>
 			<div style={RIMG1}>
-				<a href="https://cdn.pixabay.com/photo/2023/06/03/16/05/spotted-laughingtrush-8037974__340.png">
+				<a href="">
 					<img
 						src="https://cdn.pixabay.com/photo/2023/06/03/16/05/spotted-laughingtrush-8037974__340.png"
 						alt="小画像1"
@@ -98,7 +98,7 @@ const ImageTile = () => {
 				</a>
 			</div>
 			<div style={RIMG2}>
-				<a href="https://cdn.pixabay.com/photo/2023/06/03/16/05/spotted-laughingtrush-8037974__340.png">
+				<a href="">
 					<img
 						src="https://cdn.pixabay.com/photo/2023/06/03/16/05/spotted-laughingtrush-8037974__340.png"
 						alt="小画像2"
@@ -106,7 +106,7 @@ const ImageTile = () => {
 				</a>
 			</div>
 			<div style={RIMG3}>
-				<a href="https://cdn.pixabay.com/photo/2023/06/03/16/05/spotted-laughingtrush-8037974__340.png">
+				<a href="">
 					<img
 						src="https://cdn.pixabay.com/photo/2023/06/03/16/05/spotted-laughingtrush-8037974__340.png"
 						alt="小画像3"
@@ -114,7 +114,7 @@ const ImageTile = () => {
 				</a>
 			</div>
 			<div style={RIMG4}>
-				<a href="https://cdn.pixabay.com/photo/2023/06/03/16/05/spotted-laughingtrush-8037974__340.png">
+				<a href="">
 					<img
 						src="https://cdn.pixabay.com/photo/2023/06/03/16/05/spotted-laughingtrush-8037974__340.png"
 						alt="小画像4"
