@@ -1,38 +1,31 @@
 import React from "react";
+import Heading from "@/components/Heading";
+import FONT_SIZE from "@/utils/fontSize";
 
-const DEFAULT_STYLE = {
+const DEFAULT_AREA = {
 	fontSize: "10px",
 	display: "flex",
-	justifyContent: "flex-end",
+	justifyContent: "space-between",
+	width: "1350px",
+	marginLeft: "auto",
 };
-
-const DEFAULT_STYLE_TEXT = {
-	width: "344px",
-	height: "184px",
-	display: "block",
-};
-
-const DEFAULT_STYLE_H1 = {
-	fontSize: "4rem",
-};
-
-const DEFAULT_STYLE_P = {
-	fontSize: "3.2rem",
+const DEFAULT_CONTEXT = {
+	display: "flex",
+	flexDirection: "column",
+	justifyContent: "center",
 };
 
 const DEFAULT_STYLE_IMG = {
-	width: "1431px",
-	height: "555px",
-	backgroundColor: "#D9D9D9",
-	marginLeft: "53px",
+	width: "1050px",
+	height: "350px",
 };
 
 const SubVisual = ({ context, outline, src }) => {
 	return (
-		<div style={DEFAULT_STYLE}>
-			<div style={DEFAULT_STYLE_TEXT}>
-				<h1 style={DEFAULT_STYLE_H1}>{context}</h1>
-				<p style={DEFAULT_STYLE_P}>{outline}</p>
+		<div style={DEFAULT_AREA}>
+			<div style={DEFAULT_CONTEXT}>
+				<Heading fontSize="LARGE" context={context} />
+				<p style={{ fontSize: FONT_SIZE["SMALL"] }}>{outline}</p>
 			</div>
 			<img style={DEFAULT_STYLE_IMG} src={src} alt="" />
 		</div>
