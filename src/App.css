@@ -3,3 +3,7 @@
 body {
 	font-family: "Kiwi Maru", serif;
 }
+
+img {
+	object-fit: cover;
+}
