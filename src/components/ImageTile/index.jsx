@@ -44,6 +44,8 @@ const LIMG = {
 	borderRadius: "0px 0px 0px 50px",
 };
 
+const SIMG = {};
+
 const RIMG1 = {
 	position: "absolute",
 	width: "346px",
@@ -89,35 +91,36 @@ const ImageTile = () => {
 					style={LIMG}
 				/>
 			</a>
-			<div style={RIMG1}>
+			<div style={SIMG}>
 				<a href="">
 					<img
 						src="https://cdn.pixabay.com/photo/2023/06/03/16/05/spotted-laughingtrush-8037974__340.png"
 						alt="小画像1"
+						style={RIMG1}
 					/>
 				</a>
-			</div>
-			<div style={RIMG2}>
+
 				<a href="">
 					<img
 						src="https://cdn.pixabay.com/photo/2023/06/03/16/05/spotted-laughingtrush-8037974__340.png"
 						alt="小画像2"
+						style={RIMG2}
 					/>
 				</a>
-			</div>
-			<div style={RIMG3}>
+
 				<a href="">
 					<img
 						src="https://cdn.pixabay.com/photo/2023/06/03/16/05/spotted-laughingtrush-8037974__340.png"
 						alt="小画像3"
+						style={RIMG3}
 					/>
 				</a>
-			</div>
-			<div style={RIMG4}>
+
 				<a href="">
 					<img
 						src="https://cdn.pixabay.com/photo/2023/06/03/16/05/spotted-laughingtrush-8037974__340.png"
 						alt="小画像4"
+						style={RIMG4}
 					/>
 				</a>
 			</div>
