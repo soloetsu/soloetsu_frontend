@@ -3,20 +3,20 @@ import Heading from "@/components/Heading";
 import FONT_SIZE from "@/utils/fontSize";
 
 const DEFAULT_AREA = {
-	fontSize: "10px",
 	display: "flex",
 	justifyContent: "space-between",
-	width: "1350px",
+	width: "90%",
 	marginLeft: "auto",
 };
 const DEFAULT_CONTEXT = {
 	display: "flex",
 	flexDirection: "column",
 	justifyContent: "center",
+	width: "15%",
 };
 
 const DEFAULT_STYLE_IMG = {
-	width: "1050px",
+	width: "80%",
 	height: "350px",
 };
 

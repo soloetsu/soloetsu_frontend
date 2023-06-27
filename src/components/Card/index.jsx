@@ -5,13 +5,13 @@ import FONT_SIZE from "@/utils/fontSize";
 const DEFAULT_CARD = {
 	display: "flex",
 	flexDirection: "column",
-	width: "450px",
+	width: "30%",
 };
 
 const DEFAULT_IMG = {
 	display: "flex",
-	width: "450px",
-	height: "350px",
+	width: "100%",
+	height: "23vw",
 	borderRadius: "0px 20px 0px",
 	filter: "drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))",
 };
