@@ -5,13 +5,12 @@ const Heading = ({ fontSize, context }) => {
 	const headingStyle = {
 		fontSize: FONT_SIZE[fontSize],
 		position: "relative",
-		marginBottom: "40px",
 	};
 
 	const underlineStyle = {
 		content: "''",
 		position: "absolute",
-		bottom: "-8px",
+		bottom: 0,
 		left: 0,
 		width: "75px",
 		height: "5px",
