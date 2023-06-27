@@ -46,8 +46,16 @@ const CHECKMARK_STYLE = {
 const Button = ({ tag }) => {
 	return (
 		<div>
-				<div style={PARENT_STYLE}>
+			<h2>タグ</h2>
+					<div style={PARENT_STYLE}>
   					<div style={CHILED_STYLE}><button style={BUTTON_STYLE_ONCLICK}><span style={CHECKMARK_STYLE}>&#x2713;</span>リラックス</button></div>
+  					<div style={CHILED_STYLE}><button style={BUTTON_STYLE}>アウトドア</button></div>
+  					<div style={CHILED_STYLE}><button style={BUTTON_STYLE}>体験</button></div>
+  					<div style={CHILED_STYLE}><button style={BUTTON_STYLE}>お得</button></div>
+  					<div style={CHILED_STYLE}><button style={BUTTON_STYLE}>リラックス</button></div>
+  					<div style={CHILED_STYLE}><button style={BUTTON_STYLE}>アウトドア</button></div>
+  					<div style={CHILED_STYLE}><button style={BUTTON_STYLE}>体験</button></div>
+  					<div style={CHILED_STYLE}><button style={BUTTON_STYLE}>お得</button></div>
   					<div style={CHILED_STYLE}><button style={BUTTON_STYLE}>アウトドア</button></div>
   					<div style={CHILED_STYLE}><button style={BUTTON_STYLE}>体験</button></div>
   					<div style={CHILED_STYLE}><button style={BUTTON_STYLE}>お得</button></div>
