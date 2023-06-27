@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
-import "@splidejs/splide/css";
+import "@splidejs/react-splide/css";
 
 const DEFAULT_STYLE = {
-	width: "50%",
+	width: "60%",
 };
 
 const IMG_STYLE = {
@@ -14,28 +14,48 @@ const IMG_STYLE = {
 };
 
 const Slider = ({ img }) => {
+	const syncSliders = (primary, secondary) => {
+		primary.sync(secondary.splide);
+	};
+
+	const primaryRef = useRef(null);
+	const secondaryRef = useRef(null);
+
+	useEffect(() => {
+		if (primaryRef.current && secondaryRef.current) {
+			syncSliders(primaryRef.current, secondaryRef.current);
+		}
+	}, [primaryRef, secondaryRef]);
+
 	return (
 		<>
 			<div style={DEFAULT_STYLE}>
 				<Splide
-					aria-label="私のお気に入りの画像集"
+					ref={primaryRef}
 					options={{
-						type: "loop", //画像のループ
-						autoplay: true, // 自動再生を有効
-						interval: 3000, // 自動再生の間隔を3秒に設定
-						/*
-                            マウスが画面にフォーカスした場合スライド停止。
-                            画像の矢印等をクリックした際にマウスのフォーカスが維持されるため、
-                            スライド外をクリックしないと自動再生が再開しない。
-                            以下の設定で解除可能
-                            pauseOnHover: false
-                            pauseOnFocus: false
-                        */
+						type: "fade",
 					}}
 				>
-					{img.map((url) => {
+					{img.map((url, index) => {
 						return (
-							<SplideSlide>
+							<SplideSlide key={index}>
+								<img src={url} alt={url} style={IMG_STYLE} />
+							</SplideSlide>
+						);
+					})}
+				</Splide>
+				<Splide
+					ref={secondaryRef}
+					options={{
+						type: "slide",
+						pagination: false,
+						isNavigation: true,
+						perPage: 6,
+					}}
+				>
+					{img.map((url, index) => {
+						return (
+							<SplideSlide key={index}>
 								<img src={url} alt={url} style={IMG_STYLE} />
 							</SplideSlide>
 						);
