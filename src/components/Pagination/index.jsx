@@ -1,6 +1,17 @@
 import React, { useState } from "react";
 
-function HomePage() {
+function pagination() {
+	const leftSlide = () => {
+		if (currentPage > 1) {
+			setCurrentPage(currentPage - 1);
+		}
+	};
+
+	const rightSlide = () => {
+		if (currentPage < totalPages) {
+			setCurrentPage(currentPage + 1);
+		}
+	};
 	const [currentPage, setCurrentPage] = useState(1);
 
 	// ページネーションの総ページ数
@@ -12,6 +23,7 @@ function HomePage() {
 	};
 
 	// ページネーションのボタンを生成する関数
+
 	const renderPageButtons = () => {
 		const buttons = [];
 
@@ -76,9 +88,26 @@ function HomePage() {
 			<p>This is the content of page {currentPage}.</p>
 
 			{/* ページネーションのボタンを表示 */}
-			<div className="pagination">{renderPageButtons()}</div>
+
+			<div className="pagination">
+				<button
+					onClick={() => {
+						leftSlide();
+					}}
+				>
+					←
+				</button>
+				{renderPageButtons()}
+				<button
+					onClick={() => {
+						rightSlide();
+					}}
+				>
+					→
+				</button>
+			</div>
 		</div>
 	);
 }
 
-export default HomePage;
+export default pagination;
