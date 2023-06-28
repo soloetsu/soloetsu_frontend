@@ -1,5 +1,9 @@
 import React, { useState } from "react";
 
+// const DEFAULT_STYLE = {
+
+// }
+
 function pagination() {
 	const leftSlide = () => {
 		if (currentPage > 1) {
@@ -40,7 +44,7 @@ function pagination() {
 		if (currentPage > threshold + 2) {
 			buttons.push(
 				<span key="ellipsis1" className="ellipsis">
-					...
+					•••
 				</span>
 			);
 		}
@@ -60,7 +64,7 @@ function pagination() {
 		if (currentPage < totalPages - threshold - 1) {
 			buttons.push(
 				<span key="ellipsis2" className="ellipsis">
-					...
+					•••
 				</span>
 			);
 		}
@@ -95,7 +99,7 @@ function pagination() {
 						leftSlide();
 					}}
 				>
-					←
+					‹
 				</button>
 				{renderPageButtons()}
 				<button
@@ -103,7 +107,7 @@ function pagination() {
 						rightSlide();
 					}}
 				>
-					→
+					›
 				</button>
 			</div>
 		</div>
