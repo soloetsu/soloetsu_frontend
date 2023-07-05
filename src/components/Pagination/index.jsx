@@ -1,117 +1,105 @@
 import React, { useState } from "react";
+import Page from "./Page";
+import Arrow from "./Arrow";
 
-// const DEFAULT_STYLE = {
+const DEFAULT_STYLE = {
+	display: "block",
+	justifyContent: "center",
+	width: "35px",
+	padding: "8px 9px",
+	margin: "0 3px",
+	color: "#333",
+	fontSize: "13px",
+	cursor: "pointer",
+	border: "none",
+	borderRadius: "50%",
+};
 
-// }
+const pagination = ({ pages }) => {
+	// ページネーションの総ページ数
+	const totalPages = pages;
 
-function pagination() {
-	const leftSlide = () => {
-		if (currentPage > 1) {
-			setCurrentPage(currentPage - 1);
-		}
-	};
-
-	const rightSlide = () => {
-		if (currentPage < totalPages) {
-			setCurrentPage(currentPage + 1);
-		}
-	};
 	const [currentPage, setCurrentPage] = useState(1);
 
-	// ページネーションの総ページ数
-	const totalPages = 20;
-
-	// ページを変更する関数
-	const changePage = (page) => {
-		setCurrentPage(page);
-	};
-
 	// ページネーションのボタンを生成する関数
-
 	const renderPageButtons = () => {
 		const buttons = [];
+		const threshold = 1;
 
-		// 省略記号の表示の閾値
-		const threshold = 2;
-
-		// 先頭のページボタンを表示
-		buttons.push(
-			<button key={1} className={currentPage === 1 ? "active" : ""} onClick={() => changePage(1)}>
-				1
-			</button>
+		const createPage = (pageNumber) => (
+			<Page
+				style={DEFAULT_STYLE}
+				key={pageNumber}
+				pageNumber={pageNumber}
+				currentPage={currentPage}
+				setCurrentPage={setCurrentPage}
+			/>
 		);
 
-		if (currentPage > threshold + 2) {
-			buttons.push(
-				<span key="ellipsis1" className="ellipsis">
-					•••
-				</span>
-			);
-		}
+		const createEllipsis = (key) => (
+			<span key={key} className="ellipsis" style={DEFAULT_STYLE}>
+				…
+			</span>
+		);
 
-		// 現在のページを中心に表示する範囲を計算
-		let start = Math.max(currentPage - threshold, 2);
-		let end = Math.min(currentPage + threshold, totalPages - 1);
+		if (totalPages <= threshold * 2 + 4) {
+			for (let page = 1; page <= totalPages; page++) {
+				buttons.push(createPage(page));
+			}
+		} else if (currentPage <= threshold + 2) {
+			for (let page = 1; page <= threshold * 2 + 3; page++) {
+				buttons.push(createPage(page));
+			}
+			buttons.push(createEllipsis("ellipsis1"));
+			buttons.push(createPage(totalPages));
+		} else if (currentPage >= totalPages - threshold - 1) {
+			buttons.push(createPage(1));
+			buttons.push(createEllipsis("ellipsis1"));
 
-		for (let page = start; page <= end; page++) {
-			buttons.push(
-				<button key={page} className={currentPage === page ? "active" : ""} onClick={() => changePage(page)}>
-					{page}
-				</button>
-			);
-		}
+			for (let page = totalPages - threshold * 2 - 2; page <= totalPages; page++) {
+				buttons.push(createPage(page));
+			}
+		} else {
+			buttons.push(createPage(1));
+			buttons.push(createEllipsis("ellipsis1"));
 
-		if (currentPage < totalPages - threshold - 1) {
-			buttons.push(
-				<span key="ellipsis2" className="ellipsis">
-					•••
-				</span>
-			);
-		}
+			let start = currentPage - threshold;
+			let end = currentPage + threshold;
+			for (let page = start; page <= end; page++) {
+				buttons.push(createPage(page));
+			}
 
-		// 最後のページボタンを表示
-		if (totalPages > 1) {
-			buttons.push(
-				<button
-					key={totalPages}
-					className={currentPage === totalPages ? "active" : ""}
-					onClick={() => changePage(totalPages)}
-				>
-					{totalPages}
-				</button>
-			);
+			buttons.push(createEllipsis("ellipsis2"));
+			buttons.push(createPage(totalPages));
 		}
 
 		return buttons;
 	};
 
 	return (
-		<div>
-			{/* ページのコンテンツを表示 */}
-			<h1>Page {currentPage}</h1>
-			<p>This is the content of page {currentPage}.</p>
-
-			{/* ページネーションのボタンを表示 */}
-
-			<div className="pagination">
-				<button
-					onClick={() => {
-						leftSlide();
-					}}
-				>
-					‹
-				</button>
-				{renderPageButtons()}
-				<button
-					onClick={() => {
-						rightSlide();
-					}}
-				>
-					›
-				</button>
-			</div>
+		<div
+			style={{
+				display: "flex",
+				justifyContent: "center",
+			}}
+		>
+			<Arrow
+				style={DEFAULT_STYLE}
+				direction="left"
+				totalPages={totalPages}
+				currentPage={currentPage}
+				setCurrentPage={setCurrentPage}
+			/>
+			<div style={{ display: "flex", justifyContent: "center" }}>{renderPageButtons()}</div>
+			<Arrow
+				style={DEFAULT_STYLE}
+				direction="right"
+				totalPages={totalPages}
+				currentPage={currentPage}
+				setCurrentPage={setCurrentPage}
+			/>
 		</div>
 	);
-}
+};
 
 export default pagination;
