@@ -1,7 +1,8 @@
 import React from "react";
 import allow from "@/images/AboutArea_yajirusi.png";
+import Heading from "@/components/Heading";
 
-function AboutArea() {
+const AboutArea = () => {
 	return (
 		<div style={{ display: "flex", alignItems: "center", width: "800px", margin: "0 auto" }}>
 			<div style={{ flex: "1", display: "flex", flexDirection: "row" }}>
@@ -21,18 +22,7 @@ function AboutArea() {
 					</h2>
 				</div>
 				<div style={{ flex: "1", marginLeft: "-200px" }}>
-					<h1 style={{ marginTop: "20px", marginBottom: "10px", position: "relative" }}>
-						上越とソロ旅
-						<span
-							style={{
-								borderBottom: "6px solid #ffc300",
-								width: "66px",
-								position: "absolute",
-								bottom: "-13px",
-								left: "0",
-							}}
-						></span>
-					</h1>
+					<Heading context="上越とソロ旅" />
 					<p style={{ whiteSpace: "pre-wrap", marginTop: "70px", marginBottom: "70px", textSize: "" }}>
 						上越市と~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 						<br />
@@ -73,6 +63,6 @@ function AboutArea() {
 			</div>
 		</div>
 	);
-}
+};
 
 export default AboutArea;
