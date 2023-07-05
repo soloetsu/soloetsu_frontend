@@ -82,46 +82,26 @@ const DEFAULT_BIGTEXT = {
 	right: "9%",
 };
 
-const PickupArea = ({ url, img }) => {
+const PickupArea = ({ props }) => {
 	return (
 		<div style={DEFAULT_AREA}>
 			<Heading context="定番のプラン" />
 			<div style={DEFAULT_BOX_AREA}>
-				<div style={DEFAULT_BOX}>
-					<p style={DEFAULT_TITLE}>酒巡りの旅</p>
-					<a href={url} style={{ textDecoration: "none" }}>
-						<img src={img} alt="画像1" style={DEFAULT_IMG} />
-					</a>
-					<div style={DEFAULT_NUM_AREA}>
-						<div style={DEFAULT_NUM_TITLE}>PICKUP</div>
-						<p style={DEFAULT_NUM}>01</p>
-						<div style={DEFAULT_NUM_ALIGN}></div>
-					</div>
-				</div>
-
-				<div style={DEFAULT_BOX}>
-					<p style={DEFAULT_TITLE}>酒巡りの旅</p>
-					<a href={url} style={{ textDecoration: "none" }}>
-						<img src={img} alt="画像1" style={DEFAULT_IMG} />
-					</a>
-					<div style={DEFAULT_NUM_AREA}>
-						<div style={DEFAULT_NUM_TITLE}>PICKUP</div>
-						<p style={DEFAULT_NUM}>01</p>
-						<div style={DEFAULT_NUM_ALIGN}></div>
-					</div>
-				</div>
-
-				<div style={DEFAULT_BOX}>
-					<p style={DEFAULT_TITLE}>酒巡りの旅</p>
-					<a href={url} style={{ textDecoration: "none" }}>
-						<img src={img} alt="画像1" style={DEFAULT_IMG} />
-					</a>
-					<div style={DEFAULT_NUM_AREA}>
-						<div style={DEFAULT_NUM_TITLE}>PICKUP</div>
-						<p style={DEFAULT_NUM}>01</p>
-						<div style={DEFAULT_NUM_ALIGN}></div>
-					</div>
-				</div>
+				{props.map((prop, index) => {
+					return (
+						<div style={DEFAULT_BOX} key={index}>
+							<p style={DEFAULT_TITLE}>{prop.title}</p>
+							<a href={prop.url} style={{ textDecoration: "none" }}>
+								<img src={prop.img} alt="画像1" style={DEFAULT_IMG} />
+							</a>
+							<div style={DEFAULT_NUM_AREA}>
+								<div style={DEFAULT_NUM_TITLE}>PICKUP</div>
+								<p style={DEFAULT_NUM}>{index + 1}</p>
+								<div style={DEFAULT_NUM_ALIGN}></div>
+							</div>
+						</div>
+					);
+				})}
 				<div style={DEFAULT_BACK}></div>
 			</div>
 			<div style={DEFAULT_BIGTEXT}>PICKUP</div>
