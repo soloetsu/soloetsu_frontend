@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React from "react";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import Heading from "@/components/Heading";
 import "@splidejs/react-splide/css";
@@ -51,9 +51,9 @@ const ConnectSlider = ({ img, context }) => {
 						pagination: false,
 					}}
 				>
-					{img.map((url) => {
+					{img.map((url, index) => {
 						return (
-							<SplideSlide>
+							<SplideSlide key={index}>
 								<div>
 									<img src={url} alt={url} style={IMG_STYLE} />
 									<h2 style={DEFAULT_NAME}>スポット名</h2>
