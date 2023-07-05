@@ -6,6 +6,7 @@ import CardTest from "./pages/CardTest";
 import SubVisualTest from "./pages/SubVisualTest";
 import SliderTest from "./pages/SliderTest";
 import TagAreaTest from "./pages/TagAreaTest";
+import PaginationTest from "./pages/PaginationTest";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
 				<Route path="/subVisualTest" element={<SubVisualTest />} />
 				<Route path="/sliderTest" element={<SliderTest />} />
 				<Route path="/tagAreaTest" element={<TagAreaTest />} />
+				<Route path="/paginationTest" element={<PaginationTest />} />
 			</Routes>
 		</Router>
 	);
