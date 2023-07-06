@@ -1,128 +1,53 @@
 import React from "react";
-
-const PLANNAME = {
-	position: "absolute",
-	width: "480px",
-	height: "35px",
-	left: "274px",
-	top: "332px",
-
-	fontFamily: "Kiwi Maru",
-	fontStyle: "normal",
-	fontWeight: 300,
-	fontSize: "24px",
-	lineHeight: "35px",
-
-	display: "flex",
-	alignItems: "center",
-
-	color: "#000000",
-};
+import FONT_SIZE from "@/utils/fontSize";
+import Title from "@/components/general/Title";
+import { ReactComponent as Plan } from "@/assets/svg/plan.svg";
 
 const OVERVIEW = {
-	position: "absolute",
-	width: "600px",
-	height: "29px",
-	left: "232px",
-	top: "396px",
-
-	fontFamily: "Yomogi",
-	fontStyle: "normal",
-	fontWeight: 400,
-	fontSize: "20px",
-	lineHeight: "29px",
-
-	color: "#000000",
+	fontSize: FONT_SIZE["SMALL"],
 };
 
-const LIMG = {
-	position: "absolute",
-	width: "726px",
-	height: "541px",
-	left: "230px",
-	top: "510px",
-	borderRadius: "0px 0px 0px 50px",
+const DEFAULT_RIGHT = {
+	width: "23%",
+	display: "flex",
+	flexDirection: "column",
+	justifyContent: "space-between",
 };
 
-const SIMG = {};
-
-const RIMG1 = {
-	position: "absolute",
-	width: "346px",
-	height: "258px",
-	top: "510px",
-	left: "976px",
+const SMALL_IMG = {
+	width: "350px",
+	height: "260px",
 };
 
-const RIMG2 = {
-	position: "absolute",
-	width: "346px",
-	height: "258px",
-	top: "510px",
-	left: "1344px",
-	borderRadius: "0px 50px 0px 0px",
-};
-
-const RIMG3 = {
-	position: "absolute",
-	width: "346px",
-	height: "257px",
-	top: "794px",
-	left: "976px",
-};
-
-const RIMG4 = {
-	position: "absolute",
-	width: "346px",
-	height: "257px",
-	top: "794px",
-	left: "1344px",
-};
-
-const ImageTile = () => {
+const ImageTile = ({ props }) => {
 	return (
 		<>
-			<div style={PLANNAME}>プラン名</div>
-			<div style={OVERVIEW}>プラン概要～～～～～～～～～～～～～～</div>
-			<a href="">
-				<img
-					src="https://cdn.pixabay.com/photo/2023/06/08/22/35/foxtail-grass-8050497_1280.jpg"
-					alt="大画像"
-					style={LIMG}
-				/>
-			</a>
-			<div style={SIMG}>
-				<a href="">
-					<img
-						src="https://cdn.pixabay.com/photo/2023/06/03/16/05/spotted-laughingtrush-8037974__340.png"
-						alt="小画像1"
-						style={RIMG1}
-					/>
+			<Title icon={<Plan />} context={props.title} />
+			<div style={OVERVIEW}>{props.overview}</div>
+			<div style={{ display: "flex", justifyContent: "space-between" }}>
+				<a href={props.spots[0].url} style={{ width: "50%" }}>
+					<img src={props.spots[0].image} alt="大画像" style={{ borderRadius: "0 0 0 50px" }} />
 				</a>
-
-				<a href="">
-					<img
-						src="https://cdn.pixabay.com/photo/2023/06/03/16/05/spotted-laughingtrush-8037974__340.png"
-						alt="小画像2"
-						style={RIMG2}
-					/>
-				</a>
-
-				<a href="">
-					<img
-						src="https://cdn.pixabay.com/photo/2023/06/03/16/05/spotted-laughingtrush-8037974__340.png"
-						alt="小画像3"
-						style={RIMG3}
-					/>
-				</a>
-
-				<a href="">
-					<img
-						src="https://cdn.pixabay.com/photo/2023/06/03/16/05/spotted-laughingtrush-8037974__340.png"
-						alt="小画像4"
-						style={RIMG4}
-					/>
-				</a>
+				<div style={DEFAULT_RIGHT}>
+					<a href={props.spots[1].url}>
+						<img style={SMALL_IMG} src={props.spots[1].image} alt="小画像1" />
+					</a>
+					<a href={props.spots[2].url}>
+						<img style={SMALL_IMG} src={props.spots[2].image} alt="小画像2" />
+					</a>
+				</div>
+				<div style={DEFAULT_RIGHT}>
+					<a href={props.spots[3].url}>
+						<img
+							style={{ ...SMALL_IMG, borderRadius: "0 50px 0 0" }}
+							src={props.spots[3].image}
+							alt="小画像3"
+						/>
+					</a>
+					<a href={props.spots[4].url}>
+						<img style={SMALL_IMG} src={props.spots[4].image} alt="小画像4" />
+					</a>
+				</div>
 			</div>
 		</>
 	);
