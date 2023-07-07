@@ -5,7 +5,6 @@ import FONT_SIZE from "@/utils/fontSize";
 const DEFAULT_CARD = {
 	display: "flex",
 	flexDirection: "column",
-	width: "30%",
 };
 
 const DEFAULT_IMG = {
@@ -18,10 +17,13 @@ const DEFAULT_IMG = {
 
 const Card = ({ url, img, context, tags }) => {
 	return (
-		<>
-			<div style={DEFAULT_CARD}>
+		<div style={DEFAULT_CARD}>
+			<a href={url}>
+				<img src={img} alt="画像" style={DEFAULT_IMG} />
+			</a>
+			<div style={{ width: "max-content", marginTop: SPACING["MEDIUM"] }}>
 				<a href={url}>
-					<img src={img} alt="画像" style={DEFAULT_IMG} />
+					<p style={{ fontSize: FONT_SIZE["MEDIUM"] }}>{context}</p>
 				</a>
 				<div style={{ width: "max-content", marginTop: SPACING["MEDIUM"] }}>
 					<a href={url}>
@@ -38,7 +40,7 @@ const Card = ({ url, img, context, tags }) => {
 					</p>
 				</div>
 			</div>
-		</>
+		</div>
 	);
 };
 
