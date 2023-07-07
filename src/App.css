@@ -13,3 +13,8 @@ img {
 button {
 	background: none;
 }
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
