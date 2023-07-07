@@ -8,6 +8,7 @@ import SliderTest from "./pages/SliderTest";
 import TagAreaTest from "./pages/TagAreaTest";
 import PaginationTest from "./pages/PaginationTest";
 import PickupAreaTest from "./pages/PickupAreaTest";
+import BreadCrumbTest from "./pages/BreadcrumbTest";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
 				<Route path="/tagAreaTest" element={<TagAreaTest />} />
 				<Route path="/paginationTest" element={<PaginationTest />} />
 				<Route path="/pickupAreaTest" element={<PickupAreaTest />} />
+				<Route path="/breadCrumbTest" element={<BreadCrumbTest />} />
 			</Routes>
 		</Router>
 	);
