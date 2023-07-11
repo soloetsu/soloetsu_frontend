@@ -12,6 +12,7 @@ import BreadCrumbTest from "./pages/BreadcrumbTest";
 import AboutAreaTest from "./pages/AboutAreaTest";
 import ImageTileTest from "./pages/ImageTileTest";
 import ListTest from "./pages/ListTest";
+import FooterTest from "./pages/FooterTest";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
 				<Route path="/aboutAreaTest" element={<AboutAreaTest />} />
 				<Route path="/imageTileTest" element={<ImageTileTest />} />
 				<Route path="/listTest" element={<ListTest />} />
+				<Route path="/footerTest" element={<FooterTest />} />
 			</Routes>
 		</Router>
 	);
