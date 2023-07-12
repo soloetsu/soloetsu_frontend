@@ -1,5 +1,5 @@
 import React from "react";
-import Heading from "@/components/Heading";
+import Heading from "@/components/general/Heading";
 import FONT_SIZE from "@/utils/fontSize";
 
 const DEFAULT_AREA = {
