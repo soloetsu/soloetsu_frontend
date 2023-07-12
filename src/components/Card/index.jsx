@@ -28,7 +28,7 @@ const Card = ({ url, img, context, tags }) => {
 						<p style={{ fontSize: FONT_SIZE["MEDIUM"] }}>{context}</p>
 					</a>
 				</div>
-				<div style={{ display: "flex", marginTop: SPACING["SMALL"] }}>
+				<div style={{ display: "flex", flexWrap: "wrap", marginTop: SPACING["SMALL"] }}>
 					<p>
 						{tags.map((tag, index) => (
 							<span style={{ fontSize: FONT_SIZE["SMALL"], marginRight: SPACING["MEDIUM"] }} key={index}>
