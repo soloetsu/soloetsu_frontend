@@ -1,12 +1,10 @@
 import React from "react";
-import mergeStyle from "@/utils/mergeStyle";
 import { ReactComponent as Plan } from "@/assets/svg/plan.svg";
 import { ReactComponent as Spot } from "@/assets/svg/spot.svg";
 import { ReactComponent as Safety } from "@/assets/svg/safety.svg";
 import { ReactComponent as Traffic } from "@/assets/svg/traffic.svg";
 
 const DEFAULT_STYLE = {
-	color: "#F8F8F8",
 	height: "150px",
 	display: "flex",
 	justifyContent: "flex-end",
@@ -40,34 +38,42 @@ const DEFAULT_SVG = {
 	margin: "0 auto",
 };
 
-const Haeder = ({ url, context, style }) => {
+const Header = () => {
 	return (
 		<div style={DEFAULT_STYLE}>
 			<div style={DEFAULT_CIRCLE}>
-				<a style={DEFAULT_LOGO} href={url}>
+				<a style={DEFAULT_LOGO} href="">
 					<img src="/png/logo.png" />
 				</a>
 			</div>
 			<div style={DEFAULT_NAVIGATION}>
-				<a href="">
-					<Plan style={DEFAULT_SVG} />
-					プラン
-				</a>
-				<a href="">
-					<Spot style={DEFAULT_SVG} />
-					スポット
-				</a>
-				<a href="">
-					<Safety style={DEFAULT_SVG} />
-					セーフティ
-				</a>
-				<a href="">
-					<Traffic style={DEFAULT_SVG} />
-					交通情報
-				</a>
+				<div>
+					<a href="">
+						<Plan style={DEFAULT_SVG} />
+					</a>
+					<p>プラン</p>
+				</div>
+				<div>
+					<a href="">
+						<Spot style={DEFAULT_SVG} />
+					</a>
+					<p>スポット</p>
+				</div>
+				<div>
+					<a href="">
+						<Safety style={DEFAULT_SVG} />
+					</a>
+					<p>セーフティ</p>
+				</div>
+				<div>
+					<a href="">
+						<Traffic style={DEFAULT_SVG} />
+					</a>
+					<p>交通情報</p>
+				</div>
 			</div>
 		</div>
 	);
 };
 
-export default Haeder;
+export default Header;
