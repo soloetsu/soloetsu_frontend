@@ -8,12 +8,12 @@ const DEFAULT_STYLE = {
 	fontSize: FONT_SIZE["MEDIUM"],
 };
 
-const Title = ({ icon, context, size }) => {
-	const styleMerged = mergeStyle(DEFAULT_STYLE, { fontSize: FONT_SIZE[size] });
+const Title = ({ icon, context, fontSize }) => {
+	const styleMerged = mergeStyle(DEFAULT_STYLE, { fontSize: FONT_SIZE[fontSize] });
 	return (
 		<div style={styleMerged}>
 			{icon}
-			<div style={{ marginLeft: "10px" }}>{context}</div>
+			<div style={{ marginLeft: "10px", height: "40px" }}>{context}</div>
 		</div>
 	);
 };
