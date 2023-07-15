@@ -1,10 +1,8 @@
 import React from "react";
-import Header from "@/components/Haeder";
+import Header from "@/components/Header";
 
 const HeaderTest = () => {
-	return (
-        <Header/>
-	);
+	return <Header />;
 };
 
 export default HeaderTest;
