@@ -1,6 +1,7 @@
 import React from "react";
 import SPACING from "@/utils/spacing";
 import FONT_SIZE from "@/utils/fontSize";
+import Title from "@/components/general/Title";
 import { ReactComponent as Plan } from "@/assets/svg/plan.svg";
 
 const DEFAULT_CARD = {
@@ -49,10 +50,7 @@ const List = ({ props }) => {
 			<div style={DEFAULT_CONTENT}>
 				<div style={{ width: "100%" }}>
 					<div style={{ display: "flex" }}>
-						<Plan />
-						<p style={{ fontSize: FONT_SIZE["MEDIUM"], overflow: "hidden", textOverflow: "ellipsis" }}>
-							{props.name}
-						</p>
+						<Title icon={<Plan />} context={props.name} fontSize="MEDIUM" />
 					</div>
 					<div style={{ display: "flex", marginTop: SPACING["SMALL"] }}>
 						<p>
