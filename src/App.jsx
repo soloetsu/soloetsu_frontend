@@ -11,6 +11,7 @@ import PickupAreaTest from "./pages/PickupAreaTest";
 import BreadCrumbTest from "./pages/BreadcrumbTest";
 import AboutAreaTest from "./pages/AboutAreaTest";
 import ImageTileTest from "./pages/ImageTileTest";
+import ListTest from "./pages/ListTest";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
 				<Route path="/breadCrumbTest" element={<BreadCrumbTest />} />
 				<Route path="/aboutAreaTest" element={<AboutAreaTest />} />
 				<Route path="/imageTileTest" element={<ImageTileTest />} />
+				<Route path="/listTest" element={<ListTest />} />
 			</Routes>
 		</Router>
 	);

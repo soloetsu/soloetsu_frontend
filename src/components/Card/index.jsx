@@ -5,7 +5,7 @@ import FONT_SIZE from "@/utils/fontSize";
 const DEFAULT_CARD = {
 	display: "flex",
 	flexDirection: "column",
-	width: "30%",
+	width: "100%",
 };
 
 const DEFAULT_IMG = {
