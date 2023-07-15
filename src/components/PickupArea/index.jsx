@@ -1,7 +1,7 @@
 import React from "react";
 import Heading from "@/components/general/Heading";
 import FONT_SIZE from "@/utils/fontSize";
-import "./style.css";
+import "./hover.css";
 
 const DEFAULT_AREA = {
 	width: "80%",
