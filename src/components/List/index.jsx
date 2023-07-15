@@ -10,7 +10,7 @@ const DEFAULT_CARD = {
 
 const DEFAULT_IMG = {
 	display: "flex",
-	width: "100%",
+	width: "40%",
 	objectFit: "cover", // アス比保つ
 	borderRadius: "0px 20px 0px",
 	filter: "drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))",
@@ -45,9 +45,7 @@ const DEFAULT_BUTTON = {
 const List = ({ props }) => {
 	return (
 		<div style={DEFAULT_CARD}>
-			<a href="">
-				<img src={props.img} alt="画像" style={DEFAULT_IMG} />
-			</a>
+			<img src={props.img} alt="画像" style={DEFAULT_IMG} />
 			<div style={DEFAULT_CONTENT}>
 				<div style={{ width: "100%" }}>
 					<div style={{ display: "flex" }}>
