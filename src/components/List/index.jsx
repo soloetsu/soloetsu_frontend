@@ -7,11 +7,17 @@ import { ReactComponent as Plan } from "@/assets/svg/plan.svg";
 const DEFAULT_CARD = {
 	display: "flex",
 	flexDirection: "row",
+	width: "100%",
+	padding: "20px",
+	backgroundColor: "white",
+	boxShadow: "2px 4px 4px rgba(0, 0, 0, 0.25)",
+	borderRadius: "0px 20px 0px",
 };
 
 const DEFAULT_IMG = {
 	display: "flex",
-	width: "40%",
+	width: "35%",
+	height: "20vw",
 	objectFit: "cover", // アス比保つ
 	borderRadius: "0px 20px 0px",
 	filter: "drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))",
@@ -26,12 +32,11 @@ const DEFAULT_CONTENT = {
 	overflow: "hidden",
 	textOverflow: "ellipsis",
 	width: "100%",
-	justifyContent: "center",
+	justifyContent: "space-around",
 };
 
 const DEFAULT_BUTTON = {
 	display: "inline-block",
-	marginLeft: "400px",
 	padding: `${SPACING["SMALL"]} ${SPACING["MEDIUM"]}`, // パディングを調整
 	fontSize: FONT_SIZE["MEDIUM"],
 	backgroundColor: "#ff9f1c",
@@ -41,6 +46,7 @@ const DEFAULT_BUTTON = {
 	cursor: "pointer",
 	width: "150px",
 	height: "50px",
+	marginTop: SPACING["LARGE"],
 };
 
 const List = ({ props }) => {
@@ -73,16 +79,16 @@ const List = ({ props }) => {
 					>
 						{props.description}
 					</p>
-					<div
-						style={{
-							display: "flex",
-							justifyContent: "flex-end",
-							marginTop: SPACING["SMALL"],
-							marginRight: "12px",
-						}}
-					>
-						<button style={DEFAULT_BUTTON}>詳細</button>
-					</div>
+				</div>
+				<div
+					style={{
+						display: "flex",
+						justifyContent: "flex-end",
+						// marginTop: SPACING["SMALL"],
+						// marginRight: "12px",
+					}}
+				>
+					<button style={DEFAULT_BUTTON}>詳細</button>
 				</div>
 			</div>
 		</div>
