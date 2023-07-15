@@ -1,11 +1,11 @@
 import React from "react";
 import SPACING from "@/utils/spacing";
 import FONT_SIZE from "@/utils/fontSize";
+import { ReactComponent as Plan } from "@/assets/svg/plan.svg";
 
 const DEFAULT_CARD = {
 	display: "flex",
 	flexDirection: "row",
-	width: "60%",
 };
 
 const DEFAULT_IMG = {
@@ -42,55 +42,54 @@ const DEFAULT_BUTTON = {
 	height: "50px",
 };
 
-const List = ({ url, img, context, tags, description, button }) => {
+const List = ({ props }) => {
 	return (
-		<>
-			<div style={DEFAULT_CARD}>
-				<a href={url}>
-					<img src={img} alt="画像" style={DEFAULT_IMG} />
-				</a>
-				<div style={DEFAULT_CONTENT}>
-					<div style={{ width: "100%" }}>
-						{/* <a href={url}> */}
+		<div style={DEFAULT_CARD}>
+			<a href="">
+				<img src={props.img} alt="画像" style={DEFAULT_IMG} />
+			</a>
+			<div style={DEFAULT_CONTENT}>
+				<div style={{ width: "100%" }}>
+					<div style={{ display: "flex" }}>
+						<Plan />
 						<p style={{ fontSize: FONT_SIZE["MEDIUM"], overflow: "hidden", textOverflow: "ellipsis" }}>
-							{context}
+							{props.name}
 						</p>
-						{/* </a> */}
-						<div style={{ display: "flex", marginTop: SPACING["SMALL"] }}>
-							<p>
-								{tags.map((tag, index) => (
-									<span
-										style={{ fontSize: FONT_SIZE["SMALL"], marginRight: SPACING["MEDIUM"] }}
-										key={index}
-									>
-										{tag}
-									</span>
-								))}
-							</p>
-						</div>
-						<p
-							style={{
-								fontSize: FONT_SIZE["MEDIUM"],
-								marginTop: SPACING["LARGE"],
-								whiteSpace: "pre-line", // 改行するようにしたい
-							}}
-						>
-							{description}
+					</div>
+					<div style={{ display: "flex", marginTop: SPACING["SMALL"] }}>
+						<p>
+							{props.tags.map((tag, index) => (
+								<span
+									style={{ fontSize: FONT_SIZE["SMALL"], marginRight: SPACING["MEDIUM"] }}
+									key={index}
+								>
+									{tag}
+								</span>
+							))}
 						</p>
-						<div
-							style={{
-								display: "flex",
-								justifyContent: "flex-end",
-								marginTop: SPACING["SMALL"],
-								marginRight: "12px",
-							}}
-						>
-							<button style={DEFAULT_BUTTON}>{button}</button>
-						</div>
+					</div>
+					<p
+						style={{
+							fontSize: FONT_SIZE["MEDIUM"],
+							marginTop: SPACING["LARGE"],
+							whiteSpace: "pre-line", // 改行するようにしたい
+						}}
+					>
+						{props.description}
+					</p>
+					<div
+						style={{
+							display: "flex",
+							justifyContent: "flex-end",
+							marginTop: SPACING["SMALL"],
+							marginRight: "12px",
+						}}
+					>
+						<button style={DEFAULT_BUTTON}>詳細</button>
 					</div>
 				</div>
 			</div>
-		</>
+		</div>
 	);
 };
 
