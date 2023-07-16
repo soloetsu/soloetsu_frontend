@@ -1,5 +1,4 @@
 import React from "react";
-import mergeStyle from "@/utils/mergeStyle";
 
 const DEFAULT_STYLE = {
 	display: "inline-block",
@@ -18,11 +17,10 @@ const DEFAULT_STYLE = {
 	userSelect: "none",
 };
 
-const Button = ({ url, context, style }) => {
-	const styleMerged = mergeStyle(DEFAULT_STYLE, style);
+const Button = ({ url, context }) => {
 	return (
 		<a href={url}>
-			<button style={styleMerged}>{context}</button>
+			<button style={DEFAULT_STYLE}>{context}</button>
 		</a>
 	);
 };
