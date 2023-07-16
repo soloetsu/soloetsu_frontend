@@ -7,13 +7,13 @@ const PLAN_STYLE = {
 	flexDirection: "column",
 	width: "60%",
 	margin: "auto",
-	marginBottom: "40px",
+	marginBottom: "24px",
 };
 
 const CONTEXT_STYLE = {
 	display: "flex",
 	width: "50%",
-	marginBottom: "65px",
+	marginBottom: "20px",
 };
 
 const SPOT_STYLE = {
@@ -31,13 +31,14 @@ const OUTLINE_STYLE = {
 const DEFAULT_STYLE_IMG = {
 	width: "40%",
 	height: "350px",
+	borderRadius: "0 32px 0 32px",
 };
 
 const BORDER_STYLE = {
 	borderLeft: "6px solid #000000",
 	marginLeft: "3.5%",
-	padding: "5%",
-	height: "420px",
+	paddingRight: "5%",
+	height: "400px",
 };
 
 const ICON_STYLE = {

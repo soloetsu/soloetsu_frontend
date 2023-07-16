@@ -6,13 +6,13 @@ const PLAN_STYLE = {
 	flexDirection: "column",
 	width: "60%",
 	margin: "auto",
-	marginBottom: "40px",
+	marginBottom: "24px",
 };
 
 const CONTEXT_STYLE = {
 	display: "flex",
 	width: "50%",
-	marginBottom: "65px",
+	marginBottom: "20px",
 };
 
 const SPOT_STYLE = {
