@@ -13,6 +13,7 @@ import AboutAreaTest from "./pages/AboutAreaTest";
 import ImageTileTest from "./pages/ImageTileTest";
 import ListTest from "./pages/ListTest";
 import FooterTest from "./pages/FooterTest";
+import HeaderTest from "./pages/HeaderTest";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
 				<Route path="/imageTileTest" element={<ImageTileTest />} />
 				<Route path="/listTest" element={<ListTest />} />
 				<Route path="/footerTest" element={<FooterTest />} />
+				<Route path="/HeaderTest" element={<HeaderTest />} />
 			</Routes>
 		</Router>
 	);
