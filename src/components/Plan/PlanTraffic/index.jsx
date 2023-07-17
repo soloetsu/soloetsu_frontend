@@ -1,5 +1,6 @@
 import React from "react";
-import Heading from "@/components/Heading";
+import Heading from "@/components/general/Heading";
+import { ReactComponent as Car } from "@/assets/svg/car.svg";
 
 const PLAN_STYLE = {
 	display: "flex",
@@ -30,33 +31,14 @@ const ICON_STYLE = {
 	width: "92px",
 	height: "92px",
 	marginRight: "68px",
-	backgroundColor: "red",
 };
 
-const PlanTraffic = ({ title, link, type }) => {
+const PlanTraffic = ({ title, link }) => {
 	return (
 		<div style={PLAN_STYLE}>
 			<div style={CONTEXT_STYLE}>
 				<div>
-					{type === "train" ? (
-						<img
-							style={ICON_STYLE}
-							src="https://fujifilmsquare.jp/assets/img/column/column_24_01.jpg"
-							alt="train"
-						/>
-					) : type === "bus" ? (
-						<img
-							style={ICON_STYLE}
-							src="https://fujifilmsquare.jp/assets/img/column/column_24_02.jpg"
-							alt="bus"
-						/>
-					) : (
-						<img
-							style={ICON_STYLE}
-							src="https://fujifilmsquare.jp/assets/img/column/column_24_03.jpg"
-							alt="foot"
-						/>
-					)}
+					<Car style={ICON_STYLE} />
 				</div>
 				<Heading fontSize="MEDIUM" context={title} />
 			</div>

@@ -1,24 +1,46 @@
 import React from "react";
-import PlanSpot from "@/components/PlanSpot";
-import PlanTraffic from "../components/PlanTraffic";
+import Plan from "@/components/Plan";
+
+const roots = [
+	{
+		title: "○○を見ながら美味しいご飯！",
+		name: "スポット名",
+		overview: "test",
+		spot_id: 1,
+	},
+	{
+		title: "○○駅から～まで",
+		link: "test",
+		spot_id: null,
+	},
+	{
+		title: "○○を見ながら美味しいご飯！",
+		name: "スポット名",
+		overview: "test",
+		spot_id: 2,
+	},
+	{
+		title: "○○バス停から～まで",
+		link: "test",
+		spot_id: null,
+	},
+	{
+		title: "○○から～まで",
+		link: "test",
+		spot_id: null,
+	},
+	{
+		title: "○○を見ながら美味しいご飯！",
+		name: "スポット名",
+		overview: "test",
+		spot_id: 3,
+	},
+];
+
 const PlanTest = () => {
 	return (
 		<>
-			<PlanSpot
-				title="○○を見ながら美味しいご飯！"
-				name="スポット名"
-				outline="test"
-				src="https://fujifilmsquare.jp/assets/img/column/column_24_01.jpg"
-			/>
-			<PlanTraffic title="○○駅から～まで" link="test" type="train" />
-			<PlanSpot
-				title="○○を見ながら美味しいご飯！"
-				name="スポット名"
-				outline="test"
-				src="https://fujifilmsquare.jp/assets/img/column/column_24_01.jpg"
-			/>
-			<PlanTraffic title="○○バス停から～まで" link="test" type="bus" />
-			<PlanTraffic title="○○から～まで" link="test" type="foot" />
+			<Plan roots={roots} />
 		</>
 	);
 };

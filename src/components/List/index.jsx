@@ -36,21 +36,7 @@ const DEFAULT_CONTENT = {
 	justifyContent: "space-around",
 };
 
-const DEFAULT_BUTTON = {
-	display: "inline-block",
-	padding: `${SPACING["SMALL"]} ${SPACING["MEDIUM"]}`, // パディングを調整
-	fontSize: FONT_SIZE["MEDIUM"],
-	backgroundColor: "#ff9f1c",
-	color: "white",
-	borderRadius: "5px", // 角丸にする
-	border: "none",
-	cursor: "pointer",
-	width: "150px",
-	height: "50px",
-	marginTop: SPACING["LARGE"],
-};
-
-const List = ({ props }) => {
+const List = ({ props, tag = true }) => {
 	return (
 		<div style={DEFAULT_CARD}>
 			<img src={props.img} alt="画像" style={DEFAULT_IMG} />
@@ -59,18 +45,20 @@ const List = ({ props }) => {
 					<div style={{ display: "flex" }}>
 						<Title icon={<Plan />} context={props.name} fontSize="MEDIUM" />
 					</div>
-					<div style={{ display: "flex", marginTop: SPACING["SMALL"] }}>
-						<p>
-							{props.tags.map((tag, index) => (
-								<span
-									style={{ fontSize: FONT_SIZE["SMALL"], marginRight: SPACING["MEDIUM"] }}
-									key={index}
-								>
-									{tag}
-								</span>
-							))}
-						</p>
-					</div>
+					{tag && (
+						<div style={{ display: "flex", marginTop: SPACING["SMALL"] }}>
+							<p>
+								{props.tags.map((tag, index) => (
+									<span
+										style={{ fontSize: FONT_SIZE["SMALL"], marginRight: SPACING["MEDIUM"] }}
+										key={index}
+									>
+										{tag}
+									</span>
+								))}
+							</p>
+						</div>
+					)}
 					<p
 						style={{
 							fontSize: FONT_SIZE["MEDIUM"],
@@ -78,7 +66,7 @@ const List = ({ props }) => {
 							whiteSpace: "pre-line", // 改行するようにしたい
 						}}
 					>
-						{props.description}
+						{props.overview}
 					</p>
 				</div>
 				<div
@@ -89,7 +77,6 @@ const List = ({ props }) => {
 						// marginRight: "12px",
 					}}
 				>
-					{/* <button style={DEFAULT_BUTTON}>詳細</button> */}
 					<Button url={props.url} context="詳細" />
 				</div>
 			</div>

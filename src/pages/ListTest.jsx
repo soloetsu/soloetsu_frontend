@@ -8,7 +8,7 @@ const ListTest = () => {
 				props={{
 					plan_id: 1,
 					name: "お酒飲み歩き、上越酒造・ワイナリーツアー",
-					description:
+					overview:
 						"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
 					tags: ["#お酒", "#趣味"],
 					img: "https://fujifilmsquare.jp/assets/img/column/column_24_01.jpg",
