@@ -3,6 +3,7 @@ import SPACING from "@/utils/spacing";
 import FONT_SIZE from "@/utils/fontSize";
 import Title from "@/components/general/Title";
 import { ReactComponent as Plan } from "@/assets/svg/plan.svg";
+import Button from "@/components/general/Button";
 
 const DEFAULT_CARD = {
 	display: "flex",
@@ -88,7 +89,8 @@ const List = ({ props }) => {
 						// marginRight: "12px",
 					}}
 				>
-					<button style={DEFAULT_BUTTON}>詳細</button>
+					{/* <button style={DEFAULT_BUTTON}>詳細</button> */}
+					<Button url={props.url} context="詳細" />
 				</div>
 			</div>
 		</div>
