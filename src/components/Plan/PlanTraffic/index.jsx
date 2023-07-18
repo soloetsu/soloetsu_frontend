@@ -1,5 +1,6 @@
 import React from "react";
-import Heading from "@/components/general/Heading";
+// import Heading from "@/components/general/Heading";
+import FONT_SIZE from "@/utils/fontSize";
 import { ReactComponent as Car } from "@/assets/svg/car.svg";
 
 const PLAN_STYLE = {
@@ -14,6 +15,7 @@ const CONTEXT_STYLE = {
 	display: "flex",
 	width: "50%",
 	marginBottom: "20px",
+	alignItems: "center",
 };
 
 const SPOT_STYLE = {
@@ -21,7 +23,7 @@ const SPOT_STYLE = {
 };
 
 const BORDER_STYLE = {
-	borderLeft: "6px solid #000000",
+	borderLeft: "3px solid #D9D9D9",
 	marginLeft: "3.5%",
 	padding: "5%",
 	height: "20%",
@@ -30,7 +32,7 @@ const BORDER_STYLE = {
 const ICON_STYLE = {
 	width: "92px",
 	height: "92px",
-	marginRight: "68px",
+	marginRight: "40px",
 };
 
 const PlanTraffic = ({ title, link }) => {
@@ -40,7 +42,7 @@ const PlanTraffic = ({ title, link }) => {
 				<div>
 					<Car style={ICON_STYLE} />
 				</div>
-				<Heading fontSize="MEDIUM" context={title} />
+				<p style={{ fontSize: FONT_SIZE["MEDIUM"] }}>{title}</p>
 			</div>
 			<div style={SPOT_STYLE}>
 				<div style={BORDER_STYLE}></div>

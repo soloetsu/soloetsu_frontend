@@ -1,5 +1,6 @@
 import React from "react";
-import Heading from "@/components/general/Heading";
+import FONT_SIZE from "@/utils/fontSize";
+// import Heading from "@/components/general/Heading";
 import List from "@/components/List";
 
 const PLAN_STYLE = {
@@ -14,6 +15,7 @@ const CONTEXT_STYLE = {
 	display: "flex",
 	width: "50%",
 	marginBottom: "20px",
+	alignItems: "center",
 };
 
 const SPOT_STYLE = {
@@ -21,25 +23,49 @@ const SPOT_STYLE = {
 };
 
 const BORDER_STYLE = {
-	borderLeft: "6px solid #000000",
+	borderLeft: "3px solid #D9D9D9",
 	marginLeft: "3.5%",
 	paddingRight: "5%",
 	height: "400px",
 };
 
-const ICON_STYLE = {
-	width: "92px",
-	height: "92px",
-	marginRight: "68px",
-	backgroundColor: "red",
+const DEFAULT_NUM_AREA = {
+	position: "relative",
+	color: "#FFA800",
+
+	marginRight: "40px",
+};
+
+const DEFAULT_NUM_TITLE = {
+	fontSize: FONT_SIZE["MEDIUM"],
+};
+
+const DEFAULT_NUM = {
+	fontSize: "85px",
+	fontFamily: "'Cardo', serif",
+	textShadow: "2px 2px 0px rgba(255, 255, 255, 0.80)",
+	lineHeight: "0.8",
+};
+
+const DEFAULT_NUM_ALIGN = {
+	position: "absolute",
+	width: "3px",
+	height: "100%",
+	backgroundColor: "#FFA800",
+	top: "0",
+	left: "-20px",
 };
 
 const PlanSpot = ({ root, last }) => {
 	return (
 		<div style={PLAN_STYLE}>
 			<div style={CONTEXT_STYLE}>
-				<div style={ICON_STYLE}></div>
-				<Heading fontSize="MEDIUM" context={root.title} />
+				<div style={DEFAULT_NUM_AREA}>
+					<div style={DEFAULT_NUM_TITLE}>SPOT</div>
+					<p style={DEFAULT_NUM}>01</p>
+					<div style={DEFAULT_NUM_ALIGN}></div>
+				</div>
+				<p style={{ fontSize: FONT_SIZE["MEDIUM"] }}>{root.title}</p>
 			</div>
 			<div style={SPOT_STYLE}>
 				{last ? null : <div style={BORDER_STYLE}></div>}
