@@ -11,6 +11,7 @@ import Heading from "@/components/general/Heading";
 import { ReactComponent as SpotIcon } from "@/assets/svg/spot.svg";
 import { ReactComponent as TagIcon } from "@/assets/svg/tag.svg";
 import { ReactComponent as LinkIcon } from "@/assets/svg/link.svg";
+import SPACING from "@/utils/spacing";
 
 const SpotDetail = () => {
 	const location = useLocation();
@@ -79,9 +80,20 @@ const SpotDetail = () => {
 							<div style={{ display: "flex" }}>
 								{spot.tags
 									? spot.tags.map((tag, index) => {
-										return <p key={index}>#{tag}</p>;
+										return (
+											<p
+												key={index}
+												style={{
+													marginRight: SPACING["MEDIUM"],
+												}}
+											>
+													#{tag}
+											</p>
+										);
 									})
 									: ""}
+								{/* デザインを整える */}
+								{spot.area ? <p>!{spot.area}</p> : ""}
 							</div>
 						</div>
 					</div>

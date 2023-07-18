@@ -91,6 +91,7 @@ const SpotList = () => {
 									img={`data:image/jpeg;base64,${Buffer.from(spot.image).toString("base64")}`}
 									context={spot.name}
 									tags={spot.tags}
+									area={spot.area}
 								/>
 							))}
 				</div>
