@@ -30,7 +30,7 @@ const INNER = {
 // onClickでCheckboxのcheckを変更する
 // checkがtrueならonClickでfalseに、falseならtrueにする
 
-const Checkbox = ({ context, check = false }) => {
+const Checkbox = ({ context, check = false, useTags }) => {
 	const [isChecked, setIsChecked] = useState(check);
 
 	useEffect(() => {
@@ -41,7 +41,17 @@ const Checkbox = ({ context, check = false }) => {
 		<div style={CHILD_STYLE} className="tagarea">
 			<button
 				style={isChecked ? { ...BUTTON_STYLE, ...ON_STYLE } : { ...BUTTON_STYLE, ...OFF_STYLE }}
-				onClick={() => setIsChecked(!isChecked)}
+				onClick={() => {
+					setIsChecked(!isChecked);
+					// contextがuseTagsにあれば削除、なければ追加
+					useTags((prev) => {
+						if (prev.includes(context)) {
+							return prev.filter((tag) => tag !== context);
+						} else {
+							return [...prev, context];
+						}
+					});
+				}}
 				className="hover"
 			>
 				<div style={INNER}>{context}</div>

@@ -39,26 +39,28 @@ const Index = () => {
 				<div style={LIST_AREA}>
 					<List
 						props={{
-							plan_id: 1,
+							id: 1,
 							name: "お酒飲み歩き、上越酒造・ワイナリーツアー",
-							description:
+							overview:
 								"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
 							tags: ["#お酒", "#趣味"],
 							img: "https://fujifilmsquare.jp/assets/img/column/column_24_01.jpg",
 						}}
+						type="plan"
 					/>
 					<List
 						props={{
-							plan_id: 1,
+							id: 1,
 							name: "お酒飲み歩き、上越酒造・ワイナリーツアー",
-							description:
+							overview:
 								"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
 							tags: ["#お酒", "#趣味"],
 							img: "https://fujifilmsquare.jp/assets/img/column/column_24_01.jpg",
 						}}
+						type="plan"
 					/>
 				</div>
-				<GoLists context="一覧へ" />
+				<GoLists type="plan" context="一覧へ" />
 			</div>
 
 			<div style={{ width: "80%", margin: "auto" }}>
@@ -66,26 +68,28 @@ const Index = () => {
 				<div style={LIST_AREA}>
 					<List
 						props={{
-							plan_id: 1,
+							id: 1,
 							name: "お酒飲み歩き、上越酒造・ワイナリーツアー",
-							description:
+							overview:
 								"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
 							tags: ["#お酒", "#趣味"],
 							img: "https://fujifilmsquare.jp/assets/img/column/column_24_01.jpg",
 						}}
+						type="plan"
 					/>
 					<List
 						props={{
-							plan_id: 1,
+							id: 1,
 							name: "お酒飲み歩き、上越酒造・ワイナリーツアー",
-							description:
+							overview:
 								"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
 							tags: ["#お酒", "#趣味"],
 							img: "https://fujifilmsquare.jp/assets/img/column/column_24_01.jpg",
 						}}
+						type="plan"
 					/>
 				</div>
-				<GoLists context="一覧へ" />
+				<GoLists type="plan" context="一覧へ" />
 			</div>
 			<Footer />
 		</>

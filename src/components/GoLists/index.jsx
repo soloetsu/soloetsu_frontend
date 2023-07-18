@@ -1,5 +1,6 @@
 import React from "react";
 import FONT_SIZE from "@/utils/fontSize";
+import { Link } from "react-router-dom";
 
 const A = {
 	borderBottom: "solid 1px",
@@ -39,14 +40,15 @@ const AFTER = {
 	transition: "0.3s",
 };
 
-const GOLists = ({ url, context }) => {
+const GOLists = ({ type, context }) => {
+	const path = type === "plan" ? "/planList" : "/spotList";
 	return (
 		<div className="golist hover">
-			<a href={url} style={A}>
+			<Link to={path} style={A}>
 				{context}
 				<span style={BEFORE}></span>
 				<span style={AFTER}></span>
-			</a>
+			</Link>
 		</div>
 	);
 };

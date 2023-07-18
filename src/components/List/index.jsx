@@ -4,6 +4,7 @@ import FONT_SIZE from "@/utils/fontSize";
 import Title from "@/components/general/Title";
 import { ReactComponent as Plan } from "@/assets/svg/plan.svg";
 import Button from "@/components/general/Button";
+import { Link } from "react-router-dom";
 
 const DEFAULT_CARD = {
 	display: "flex",
@@ -36,7 +37,8 @@ const DEFAULT_CONTENT = {
 	justifyContent: "space-between",
 };
 
-const List = ({ props, tag = true }) => {
+const List = ({ props, type, tag = true }) => {
+	const path = type === "plan" ? "/planDetail" : "/spotDetail";
 	return (
 		<div style={DEFAULT_CARD}>
 			<img src={props.img} alt="画像" style={DEFAULT_IMG} />
@@ -73,11 +75,11 @@ const List = ({ props, tag = true }) => {
 					style={{
 						display: "flex",
 						justifyContent: "flex-end",
-						// marginTop: SPACING["SMALL"],
-						// marginRight: "12px",
 					}}
 				>
-					<Button url={props.url} context="詳細" />
+					<Link to={{ pathname: path, search: `?id=${props.id}` }}>
+						<Button url={props.url} context="詳細" />
+					</Link>
 				</div>
 			</div>
 		</div>

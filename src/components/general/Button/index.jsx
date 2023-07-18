@@ -53,19 +53,17 @@ const ARROW = {
 	transition: "0.4s",
 };
 
-const Button = ({ url, context }) => {
+const Button = ({ context }) => {
 	return (
 		<div className="button hover">
-			<a href={url}>
-				<button style={DEFAULT_STYLE}>
-					<div style={INNER} className="inner">
-						{context}
-						<div style={ARROW_AREA} className="arrowarea">
-							<span style={ARROW}></span>
-						</div>
+			<button style={DEFAULT_STYLE}>
+				<div style={INNER} className="inner">
+					{context}
+					<div style={ARROW_AREA} className="arrowarea">
+						<span style={ARROW}></span>
 					</div>
-				</button>
-			</a>
+				</div>
+			</button>
 		</div>
 	);
 };

@@ -39,10 +39,14 @@ const SpotList = () => {
 
 	const getSpotsData = async () => {
 		const res = await axios.get("http://soloetsu.haltokyo.live/api/spots");
+		console.log(res.data);
 		useSpotsData(res.data);
 	};
 
 	const [currentPage, setCurrentPage] = useState(1);
+
+	const [tags, useTags] = useState([]);
+	const [areas, useAreas] = useState([]);
 
 	return (
 		<>
@@ -51,14 +55,33 @@ const SpotList = () => {
 			<div style={CONTENT_AREA}>
 				<div style={TAGS_LIST}>
 					{spotsData.tags && (
-						<TagArea context="タグ" width="100%" tags={spotsData.tags} margin="0 0 80px 0" />
+						<TagArea
+							context="タグ"
+							width="100%"
+							tags={spotsData.tags}
+							margin="0 0 80px 0"
+							useTags={useTags}
+						/>
 					)}
-					{spotsData.areas && <TagArea context="エリア" width="100%" tags={spotsData.areas} />}
+					{spotsData.areas && (
+						<TagArea context="エリア" width="100%" tags={spotsData.areas} useTags={useAreas} />
+					)}
 				</div>
 
 				<div style={CARD_LIST}>
 					{spotsData.spots &&
 						spotsData.spots
+							.filter((spot) => {
+								if (tags.length === 0 && areas.length === 0) {
+									return spot;
+								} else if (tags.length === 0) {
+									return areas.includes(spot.area);
+								} else if (areas.length === 0) {
+									return tags.some((tag) => spot.tags.includes(tag));
+								} else {
+									return areas.includes(spot.area) && tags.some((tag) => spot.tags.includes(tag));
+								}
+							})
 							.slice((currentPage - 1) * 4, currentPage * 4)
 							.map((spot, index) => (
 								<Card

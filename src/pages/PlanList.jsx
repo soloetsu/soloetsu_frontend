@@ -45,6 +45,8 @@ const PlanList = () => {
 
 	const [currentPage, setCurrentPage] = useState(1);
 
+	const [tags, useTags] = useState([]);
+
 	return (
 		<>
 			<Header />
@@ -52,13 +54,23 @@ const PlanList = () => {
 			<div style={CONTENT_AREA}>
 				<div style={TAGS_LIST}>
 					{plansData.tags && (
-						<TagArea context="タグ" width="100%" tags={plansData.tags} margin="0 0 80px 0" />
+						<TagArea
+							context="タグ"
+							width="100%"
+							tags={plansData.tags}
+							margin="0 0 80px 0"
+							useTags={useTags}
+						/>
 					)}
 				</div>
 
 				<div style={CARD_LIST}>
 					{plansData.plans &&
 						plansData.plans
+							.filter((plan) => {
+								if (tags.length === 0) return plan;
+								return tags.every((tag) => plan.tags.includes(tag));
+							})
 							.slice((currentPage - 1) * 4, currentPage * 4)
 							.map((plan, index) => (
 								<Card

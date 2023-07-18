@@ -55,13 +55,13 @@ const DEFAULT_NUM_ALIGN = {
 	left: "-20px",
 };
 
-const PlanSpot = ({ root, last }) => {
+const PlanSpot = ({ root, last, count }) => {
 	return (
 		<div style={PLAN_STYLE}>
 			<div style={CONTEXT_STYLE}>
 				<div style={DEFAULT_NUM_AREA}>
 					<div style={DEFAULT_NUM_TITLE}>SPOT</div>
-					<p style={DEFAULT_NUM}>01</p>
+					<p style={DEFAULT_NUM}>{"0" + count}</p>
 					<div style={DEFAULT_NUM_ALIGN}></div>
 				</div>
 				<p style={{ fontSize: FONT_SIZE["MEDIUM"] }}>{root.comment}</p>
@@ -76,11 +76,12 @@ const PlanSpot = ({ root, last }) => {
 				></div>
 				<List
 					props={{
-						plan_id: root.spot_id,
+						id: root.spot_id,
 						name: root.spot.name,
 						overview: root.spot.overview,
 						img: `data:image/jpeg;base64,${Buffer.from(root.spot.image).toString("base64")}`,
 					}}
+					type="spot"
 					tag={false}
 				/>
 			</div>
