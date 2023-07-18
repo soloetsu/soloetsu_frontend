@@ -5,8 +5,10 @@ const Heading = ({ fontSize, context, margin }) => {
 	const headingStyle = {
 		fontSize: FONT_SIZE[fontSize],
 		position: "relative",
-		marginBottom: "40px",
 		margin: margin,
+		marginBottom: "30px",
+		//太字のほうがよかったら消して
+		fontWeight: "300",
 	};
 
 	const underlineStyle = {
