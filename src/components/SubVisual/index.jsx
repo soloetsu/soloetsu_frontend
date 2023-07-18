@@ -1,17 +1,18 @@
 import React from "react";
 import Heading from "@/components/general/Heading";
 import FONT_SIZE from "@/utils/fontSize";
+import Breadcrumb from "@/components/Breadcrumb";
 
 const DEFAULT_AREA = {
 	display: "flex",
 	justifyContent: "space-between",
 	width: "90%",
 	marginLeft: "auto",
+	marginTop: "60px",
 };
 const DEFAULT_CONTEXT = {
 	display: "flex",
 	flexDirection: "column",
-	justifyContent: "center",
 	width: "15%",
 };
 
@@ -24,7 +25,8 @@ const SubVisual = ({ context, outline }) => {
 	return (
 		<div style={DEFAULT_AREA}>
 			<div style={DEFAULT_CONTEXT}>
-				<Heading fontSize="LARGE" context={context} />
+				<Breadcrumb pages={["TOP", "プラン一覧"]} />
+				<Heading fontSize="LARGE" context={context} margin="15px 0 45px 0" />
 				<p style={{ fontSize: FONT_SIZE["SMALL"] }}>{outline}</p>
 			</div>
 			{/* TODO 画像差し替え */}
