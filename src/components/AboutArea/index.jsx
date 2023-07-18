@@ -6,9 +6,8 @@ import FONT_SIZE from "@/utils/fontSize";
 const DEFAULT_AREA = {
 	width: "80%",
 	height: "100vh",
-	margin: "auto",
 	display: "flex",
-	marginBottom: "0px",
+	margin: "80px auto 80px auto",
 };
 
 const DEFAULT_LEFT = {
