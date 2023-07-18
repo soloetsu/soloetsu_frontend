@@ -34,8 +34,6 @@ const DEFAULT_BIGTEXT = {
 	color: "#B1C7CF",
 	fontFamily: "'playfair display', serif",
 	transform: "rotate(-90deg)",
-	// transformOrigin: "left bottom",
-	// whiteSpace: "nowrap",
 	margin: "100px 0px 0px -75px",
 	letterSpacing: "20px",
 	width: "fit-content",
@@ -88,7 +86,15 @@ const AboutArea = () => {
 				<div style={DEFAULT_TEXT_AREA}>
 					<Heading context="上越とソロ旅" fontSize="LARGE" />
 					<p style={DEFAULT_TEXT}>
-						上越市とソロ旅の組み合わせはとても魅力的で多くの人がソロで訪れています。～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～
+						上越市とソロ旅の組み合わせはとても魅力的で、多くの人が一人で訪れています。
+						<br />
+						<br />
+						都会の喧騒から離れて静かな木漏れ日を感じるもよし。
+						<br />
+						少し大人なレジャーを楽しむもよし。
+						<br />
+						<br />
+						上越は、アナタの知らなかったアナタを知る事ができる場所です。
 					</p>
 					<p style={DEFAULT_TEXT_2}>上越の旅、一人ならではの感動を求めて</p>
 					<img src={allow} alt="yajirusi" />
@@ -96,6 +102,7 @@ const AboutArea = () => {
 			</div>
 			<div style={DEFAULT_RIGHT}>
 				<div style={DEFAULT_IMG_AREA}>
+					{/* TODO 画像差し替え */}
 					<img src="https://picsum.photos/300/300" alt="Image01" style={IMG_1} />
 					<img src="https://picsum.photos/200/250" alt="Image02" style={IMG_2} />
 				</div>

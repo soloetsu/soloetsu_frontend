@@ -51,7 +51,11 @@ const MAIN_COVER = {
 
 const FooterTest = () => {
 	return (
-		<div>
+		<div
+			style={{
+				position: "relative",
+			}}
+		>
 			<img
 				src="https://d1f5hsy4d47upe.cloudfront.net/bc/bcc0835efc897e90a43da8eed177dc28_t.jpeg"
 				alt="メイン画像"

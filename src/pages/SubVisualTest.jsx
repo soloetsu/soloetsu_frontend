@@ -6,7 +6,6 @@ const SubVisualTest = () => {
 		<SubVisual
 			context="プラン一覧"
 			outline="test"
-			src="https://fujifilmsquare.jp/assets/img/column/column_24_01.jpg"
 		/>
 	);
 };

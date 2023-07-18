@@ -20,14 +20,15 @@ const DEFAULT_STYLE_IMG = {
 	height: "350px",
 };
 
-const SubVisual = ({ context, outline, src }) => {
+const SubVisual = ({ context, outline }) => {
 	return (
 		<div style={DEFAULT_AREA}>
 			<div style={DEFAULT_CONTEXT}>
 				<Heading fontSize="LARGE" context={context} />
 				<p style={{ fontSize: FONT_SIZE["SMALL"] }}>{outline}</p>
 			</div>
-			<img style={DEFAULT_STYLE_IMG} src={src} alt="" />
+			{/* TODO 画像差し替え */}
+			<img style={DEFAULT_STYLE_IMG} src="https://fujifilmsquare.jp/assets/img/column/column_24_01.jpg" alt="" />
 		</div>
 	);
 };

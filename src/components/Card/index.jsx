@@ -1,6 +1,7 @@
 import React from "react";
 import SPACING from "@/utils/spacing";
 import FONT_SIZE from "@/utils/fontSize";
+import { Link } from "react-router-dom";
 
 const DEFAULT_CARD = {
 	display: "flex",
@@ -16,17 +17,19 @@ const DEFAULT_IMG = {
 	filter: "drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))",
 };
 
-const Card = ({ url, img, context, tags }) => {
+const Card = ({ id, img, context, tags }) => {
 	return (
 		<>
 			<div style={DEFAULT_CARD} className="hover">
-				<a href={url}>
+				{/* TODO planとspotで切り替える */}
+				<Link to={{ pathname: "/planDetail", search: `?id=${id}` }}>
 					<img src={img} alt="画像" style={DEFAULT_IMG} />
-				</a>
+				</Link>
 				<div style={{ width: "max-content", marginTop: SPACING["MEDIUM"] }}>
-					<a href={url}>
+					{/* TODO planとspotで切り替える */}
+					<Link to={{ pathname: "/planDetail", search: `?id=${id}` }}>
 						<p style={{ fontSize: FONT_SIZE["MEDIUM"] }}>{context}</p>
-					</a>
+					</Link>
 				</div>
 				<div style={{ display: "flex", flexWrap: "wrap", marginTop: SPACING["SMALL"] }}>
 					<p>

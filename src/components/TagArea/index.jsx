@@ -31,8 +31,8 @@ const TagArea = ({ width, tags }) => {
 			<h2>タグ</h2>
 			<span style={UNDERLINE_STYLE} />
 			<div style={BOXES_STYLE}>
-				{tags.map((tag, index) => (
-					<Checkbox key={index} context={tag} />
+				{tags.map((tag) => (
+					<Checkbox key={tag.id} context={tag.name} />
 				))}
 			</div>
 		</div>

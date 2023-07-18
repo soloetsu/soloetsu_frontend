@@ -94,7 +94,7 @@ const PickupArea = () => {
 	}, []);
 
 	const getPickup = async () => {
-		const res = await axios.get("http://soloetsu.haltokyo.live/api/pickup");
+		const res = await axios.get("http://soloetsu.haltokyo.live/api/plans/pickup");
 		useName(res.data[0].name);
 		useImageData(res.data[0].image);
 	};
