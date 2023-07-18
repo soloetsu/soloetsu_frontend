@@ -4,8 +4,8 @@ import List from "@/components/List";
 import { Buffer } from "buffer";
 
 const PLAN_STYLE = {
-	display: "flex",
-	flexDirection: "column",
+	// display: "flex",
+	// flexDirection: "column",
 	width: "100%",
 	margin: "auto",
 	marginBottom: "24px",
@@ -13,7 +13,7 @@ const PLAN_STYLE = {
 
 const CONTEXT_STYLE = {
 	display: "flex",
-	width: "50%",
+	width: "100%",
 	marginBottom: "20px",
 	alignItems: "center",
 };
@@ -73,17 +73,16 @@ const PlanSpot = ({ root, last }) => {
 							? { ...BORDER_STYLE, borderLeft: "3px solid #F8F8F8" }
 							: { ...BORDER_STYLE, borderLeft: "3px solid #D9D9D9" }
 					}
-				>
-					<List
-						props={{
-							plan_id: root.spot_id,
-							name: root.spot.name,
-							overview: root.spot.overview,
-							img: `data:image/jpeg;base64,${Buffer.from(root.spot.image).toString("base64")}`,
-						}}
-						tag={false}
-					/>
-				</div>
+				></div>
+				<List
+					props={{
+						plan_id: root.spot_id,
+						name: root.spot.name,
+						overview: root.spot.overview,
+						img: `data:image/jpeg;base64,${Buffer.from(root.spot.image).toString("base64")}`,
+					}}
+					tag={false}
+				/>
 			</div>
 		</div>
 	);

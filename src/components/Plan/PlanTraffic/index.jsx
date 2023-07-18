@@ -3,8 +3,8 @@ import FONT_SIZE from "@/utils/fontSize";
 import { ReactComponent as Car } from "@/assets/svg/car.svg";
 
 const PLAN_STYLE = {
-	display: "flex",
-	flexDirection: "column",
+	// display: "flex",
+	// flexDirection: "column",
 	width: "100%",
 	margin: "auto",
 	marginBottom: "24px",
@@ -12,7 +12,7 @@ const PLAN_STYLE = {
 
 const CONTEXT_STYLE = {
 	display: "flex",
-	width: "50%",
+	width: "100%",
 	marginBottom: "20px",
 	alignItems: "center",
 };

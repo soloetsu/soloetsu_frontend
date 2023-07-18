@@ -18,7 +18,8 @@ const DEFAULT_CARD = {
 const DEFAULT_IMG = {
 	display: "flex",
 	width: "35%",
-	height: "20vw",
+	// height: "20vw",
+	aspectRatio: "4 / 3",
 	objectFit: "cover", // アス比保つ
 	borderRadius: "0px 20px 0px",
 	filter: "drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))",
