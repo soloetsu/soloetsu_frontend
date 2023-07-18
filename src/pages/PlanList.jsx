@@ -4,10 +4,9 @@ import Breadcrumb from "@/components/Breadcrumb";
 import SubVisual from "@/components/SubVisual";
 import TagArea from "@/components/TagArea";
 import Card from "@/components/Card";
+import Pagination from "@/components/Pagination";
 import Footer from "@/components/Footer";
 import axios from "axios";
-import { Buffer } from "buffer";
-import { Link } from "react-router-dom";
 
 const PlanList = () => {
 	const [tags, useTags] = useState([]);
@@ -40,6 +39,7 @@ const PlanList = () => {
 					/>
 				</div>
 			</div>
+			<Pagination pages={20} />
 			<Footer />
 		</>
 	);
