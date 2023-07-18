@@ -18,17 +18,16 @@ const DEFAULT_IMG = {
 	filter: "drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))",
 };
 
-const Card = ({ id, img, context, tags }) => {
+const Card = ({ type, id, img, context, tags }) => {
+	const path = type === "plan" ? "/planDetail" : "/spotDetail";
 	return (
 		<>
 			<div style={DEFAULT_CARD} className="hover">
-				{/* TODO planとspotで切り替える */}
-				<Link to={{ pathname: "/planDetail", search: `?id=${id}` }}>
+				<Link to={{ pathname: path, search: `?id=${id}` }}>
 					<img src={img} alt="画像" style={DEFAULT_IMG} />
 				</Link>
 				<div style={{ width: "max-content", marginTop: SPACING["MEDIUM"] }}>
-					{/* TODO planとspotで切り替える */}
-					<Link to={{ pathname: "/planDetail", search: `?id=${id}` }}>
+					<Link to={{ pathname: path, search: `?id=${id}` }}>
 						<p style={{ fontSize: FONT_SIZE["MEDIUM"] }}>{context}</p>
 					</Link>
 				</div>

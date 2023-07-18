@@ -48,7 +48,7 @@ const SpotDetail = () => {
 		<>
 			<Header />
 			<div style={{ width: "80%", margin: "60px auto 150px" }}>
-				<Breadcrumb pages={["TOP", "スポット一覧", "スポット詳細"]} />
+				<Breadcrumb pages={["TOP", "スポット一覧"]} />
 				<div
 					style={{
 						display: "flex",

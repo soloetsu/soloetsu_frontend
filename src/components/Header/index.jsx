@@ -3,6 +3,7 @@ import { ReactComponent as Plan } from "@/assets/svg/plan.svg";
 import { ReactComponent as Spot } from "@/assets/svg/spot.svg";
 import { ReactComponent as Safety } from "@/assets/svg/safety.svg";
 import { ReactComponent as Traffic } from "@/assets/svg/traffic.svg";
+import { Link } from "react-router-dom";
 
 const DEFAULT_STYLE = {
 	height: "100px",
@@ -73,36 +74,36 @@ const Header = ({ unique = false }) => {
 		<div style={unique ? DEFAULT_STYLE : { ...DEFAULT_STYLE, boxShadow: "2px 4px 4px rgba(0, 0, 0, 0.1)" }}>
 			<div style={LEFT}></div>
 			<div style={unique ? DEFAULT_CIRCLE_UNIQUE : DEFAULT_CIRCLE}>
-				<a href="" style={LOGO}>
+				<Link to="/" style={LOGO}>
 					<img src="/png/logo.png" />
-				</a>
+				</Link>
 			</div>
 			<div style={ADJUSTMENT}></div>
 			<div style={RIGHT}>
 				<div style={DEFAULT_NAVIGATION}>
 					<div>
-						<a href="">
+						<Link to="/planList">
 							<Plan style={DEFAULT_SVG} />
 							<p>プラン</p>
-						</a>
+						</Link>
 					</div>
 					<div>
-						<a href="">
+						<Link to="/spotList">
 							<Spot style={DEFAULT_SVG} />
 							<p>スポット</p>
-						</a>
+						</Link>
 					</div>
 					<div>
-						<a href="">
+						<Link to="/">
 							<Safety style={DEFAULT_SVG} />
 							<p>セーフティ</p>
-						</a>
+						</Link>
 					</div>
 					<div>
-						<a href="">
+						<Link to="/">
 							<Traffic style={DEFAULT_SVG} />
 							<p>交通情報</p>
-						</a>
+						</Link>
 					</div>
 				</div>
 			</div>

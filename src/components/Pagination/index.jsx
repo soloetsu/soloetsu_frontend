@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Page from "./Page";
 import Arrow from "./Arrow";
 
@@ -15,11 +15,9 @@ const DEFAULT_STYLE = {
 	borderRadius: "50%",
 };
 
-const pagination = ({ pages }) => {
+const pagination = ({ pages, currentPage, setCurrentPage }) => {
 	// ページネーションの総ページ数
 	const totalPages = pages;
-
-	const [currentPage, setCurrentPage] = useState(1);
 
 	// ページネーションのボタンを生成する関数
 	const renderPageButtons = () => {

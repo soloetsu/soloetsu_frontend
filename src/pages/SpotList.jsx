@@ -6,6 +6,7 @@ import Card from "@/components/Card";
 import Pagination from "@/components/Pagination";
 import Footer from "@/components/Footer";
 import axios from "axios";
+import { Buffer } from "buffer";
 
 const CONTENT_AREA = {
 	display: "flex",
@@ -31,15 +32,17 @@ const PAGINATION_AREA = {
 };
 
 const SpotList = () => {
-	const [tags, useTags] = useState([]);
+	const [spotsData, useSpotsData] = useState([]);
 	useEffect(() => {
-		getSpotsTags();
+		getSpotsData();
 	}, []);
 
-	const getSpotsTags = async () => {
-		const res = await axios.get("http://soloetsu.haltokyo.live/api/spots/tags");
-		useTags(res.data);
+	const getSpotsData = async () => {
+		const res = await axios.get("http://soloetsu.haltokyo.live/api/spots");
+		useSpotsData(res.data);
 	};
+
+	const [currentPage, setCurrentPage] = useState(1);
 
 	return (
 		<>
@@ -47,45 +50,36 @@ const SpotList = () => {
 			<SubVisual context="スポット一覧" />
 			<div style={CONTENT_AREA}>
 				<div style={TAGS_LIST}>
-					<TagArea width="100%" tags={tags} margin="0 0 80px 0" />
-					<TagArea width="100%" tags={tags} />
+					{spotsData.tags && (
+						<TagArea context="タグ" width="100%" tags={spotsData.tags} margin="0 0 80px 0" />
+					)}
+					{spotsData.areas && <TagArea context="エリア" width="100%" tags={spotsData.areas} />}
 				</div>
 
 				<div style={CARD_LIST}>
-					<Card
-						id="1"
-						img="https://fujifilmsquare.jp/assets/img/column/column_24_01.jpg"
-						context="カード"
-						tags={[
-							"#タグ",
-							"#タグタグタグタグタグタグタグタグタグタグタグタグタグタグタグタグタグタグ",
-							"#タグ",
-						]}
-					/>
-					<Card
-						id="1"
-						img="https://fujifilmsquare.jp/assets/img/column/column_24_01.jpg"
-						context="カード"
-						tags={[
-							"#タグ",
-							"#タグタグタグタグタグタグタグタグタグタグタグタグタグタグタグタグタグタグ",
-							"#タグ",
-						]}
-					/>
-					<Card
-						id="1"
-						img="https://fujifilmsquare.jp/assets/img/column/column_24_01.jpg"
-						context="カード"
-						tags={[
-							"#タグ",
-							"#タグタグタグタグタグタグタグタグタグタグタグタグタグタグタグタグタグタグ",
-							"#タグ",
-						]}
-					/>
+					{spotsData.spots &&
+						spotsData.spots
+							.slice((currentPage - 1) * 4, currentPage * 4)
+							.map((spot, index) => (
+								<Card
+									key={index}
+									type="spot"
+									id={spot.id}
+									img={`data:image/jpeg;base64,${Buffer.from(spot.image).toString("base64")}`}
+									context={spot.name}
+									tags={spot.tags}
+								/>
+							))}
 				</div>
 			</div>
 			<div style={PAGINATION_AREA}>
-				<Pagination pages={20} />
+				{spotsData.spots && (
+					<Pagination
+						pages={Math.ceil(spotsData.spots.length / 4)}
+						currentPage={currentPage}
+						setCurrentPage={setCurrentPage}
+					/>
+				)}
 			</div>
 			<Footer />
 		</>

@@ -24,11 +24,11 @@ const BOXES_STYLE = {
 	marginTop: "31px",
 };
 
-const TagArea = ({ width, tags, margin }) => {
+const TagArea = ({ context, width, tags, margin }) => {
 	const styleMerged = mergeStyle(DEFAULT_STYLE, { width: width }, { margin: margin });
 	return (
 		<div style={styleMerged}>
-			<h2>タグ</h2>
+			<h2>{context}</h2>
 			<span style={UNDERLINE_STYLE} />
 			<div style={BOXES_STYLE}>
 				{tags.map((tag) => (

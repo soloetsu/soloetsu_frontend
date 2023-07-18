@@ -12,7 +12,7 @@ const Breadcrumb = ({ pages }) => {
 			{pages.map((page, index) => (
 				<div key={index}>
 					<a href={PATH[page]}>{page}</a>
-					{index !== pages.length - 1 && <span>{">"}</span>}
+					<span>{">"}</span>
 				</div>
 			))}
 		</div>

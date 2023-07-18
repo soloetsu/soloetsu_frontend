@@ -35,7 +35,7 @@ const PlanDetail = () => {
 		<>
 			<Header />
 			<div style={{ width: "80%", margin: "60px auto 0" }}>
-				<Breadcrumb pages={["TOP", "プラン一覧", "プラン詳細"]} />
+				<Breadcrumb pages={["TOP", "プラン一覧"]} />
 			</div>
 			{plan.image ? (
 				<ImageTile

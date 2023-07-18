@@ -6,6 +6,7 @@ import Card from "@/components/Card";
 import Pagination from "@/components/Pagination";
 import Footer from "@/components/Footer";
 import axios from "axios";
+import { Buffer } from "buffer";
 
 const CONTENT_AREA = {
 	display: "flex",
@@ -31,15 +32,18 @@ const PAGINATION_AREA = {
 };
 
 const PlanList = () => {
-	const [tags, useTags] = useState([]);
+	const [plansData, usePlansData] = useState([]);
 	useEffect(() => {
-		getPlansTags();
+		getPlansData();
 	}, []);
 
-	const getPlansTags = async () => {
-		const res = await axios.get("http://soloetsu.haltokyo.live/api/plans/tags");
-		useTags(res.data);
+	const getPlansData = async () => {
+		const res = await axios.get("http://soloetsu.haltokyo.live/api/plans");
+		console.log(res.data);
+		usePlansData(res.data);
 	};
+
+	const [currentPage, setCurrentPage] = useState(1);
 
 	return (
 		<>
@@ -47,45 +51,35 @@ const PlanList = () => {
 			<SubVisual context="プラン一覧" />
 			<div style={CONTENT_AREA}>
 				<div style={TAGS_LIST}>
-					<TagArea width="100%" tags={tags} margin="0 0 80px 0" />
-					<TagArea width="100%" tags={tags} />
+					{plansData.tags && (
+						<TagArea context="タグ" width="100%" tags={plansData.tags} margin="0 0 80px 0" />
+					)}
 				</div>
 
 				<div style={CARD_LIST}>
-					<Card
-						id="1"
-						img="https://fujifilmsquare.jp/assets/img/column/column_24_01.jpg"
-						context="カード"
-						tags={[
-							"#タグ",
-							"#タグタグタグタグタグタグタグタグタグタグタグタグタグタグタグタグタグタグ",
-							"#タグ",
-						]}
-					/>
-					<Card
-						id="1"
-						img="https://fujifilmsquare.jp/assets/img/column/column_24_01.jpg"
-						context="カード"
-						tags={[
-							"#タグ",
-							"#タグタグタグタグタグタグタグタグタグタグタグタグタグタグタグタグタグタグ",
-							"#タグ",
-						]}
-					/>
-					<Card
-						id="1"
-						img="https://fujifilmsquare.jp/assets/img/column/column_24_01.jpg"
-						context="カード"
-						tags={[
-							"#タグ",
-							"#タグタグタグタグタグタグタグタグタグタグタグタグタグタグタグタグタグタグ",
-							"#タグ",
-						]}
-					/>
+					{plansData.plans &&
+						plansData.plans
+							.slice((currentPage - 1) * 4, currentPage * 4)
+							.map((plan, index) => (
+								<Card
+									key={index}
+									type="plan"
+									id={plan.id}
+									img={`data:image/jpeg;base64,${Buffer.from(plan.image).toString("base64")}`}
+									context={plan.name}
+									tags={plan.tags}
+								/>
+							))}
 				</div>
 			</div>
 			<div style={PAGINATION_AREA}>
-				<Pagination pages={20} />
+				{plansData.plans && (
+					<Pagination
+						pages={Math.ceil(plansData.plans.length / 4)}
+						currentPage={currentPage}
+						setCurrentPage={setCurrentPage}
+					/>
+				)}
 			</div>
 			<Footer />
 		</>

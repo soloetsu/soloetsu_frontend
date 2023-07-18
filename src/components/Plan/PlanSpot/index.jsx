@@ -23,7 +23,6 @@ const SPOT_STYLE = {
 };
 
 const BORDER_STYLE = {
-	borderLeft: "3px solid #D9D9D9",
 	marginLeft: "3.5%",
 	paddingRight: "5%",
 	// height: "400px",
@@ -68,16 +67,23 @@ const PlanSpot = ({ root, last }) => {
 				<p style={{ fontSize: FONT_SIZE["MEDIUM"] }}>{root.comment}</p>
 			</div>
 			<div style={SPOT_STYLE}>
-				{last ? null : <div style={BORDER_STYLE}></div>}
-				<List
-					props={{
-						plan_id: root.spot_id,
-						name: root.spot.name,
-						overview: root.spot.overview,
-						img: `data:image/jpeg;base64,${Buffer.from(root.spot.image).toString("base64")}`,
-					}}
-					tag={false}
-				/>
+				<div
+					style={
+						last
+							? { ...BORDER_STYLE, borderLeft: "3px solid #F8F8F8" }
+							: { ...BORDER_STYLE, borderLeft: "3px solid #D9D9D9" }
+					}
+				>
+					<List
+						props={{
+							plan_id: root.spot_id,
+							name: root.spot.name,
+							overview: root.spot.overview,
+							img: `data:image/jpeg;base64,${Buffer.from(root.spot.image).toString("base64")}`,
+						}}
+						tag={false}
+					/>
+				</div>
 			</div>
 		</div>
 	);

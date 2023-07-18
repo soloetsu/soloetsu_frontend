@@ -25,7 +25,7 @@ const SubVisual = ({ context, outline }) => {
 	return (
 		<div style={DEFAULT_AREA}>
 			<div style={DEFAULT_CONTEXT}>
-				<Breadcrumb pages={["TOP", "プラン一覧"]} />
+				<Breadcrumb pages={["TOP"]} />
 				<Heading fontSize="LARGE" context={context} margin="15px 0 45px 0" />
 				<p style={{ fontSize: FONT_SIZE["SMALL"] }}>{outline}</p>
 			</div>
