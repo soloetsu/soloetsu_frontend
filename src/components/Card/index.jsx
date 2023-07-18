@@ -40,8 +40,7 @@ const Card = ({ type, id, img, context, tags, area }) => {
 						))}
 						{area ? (
 							<span style={{ fontSize: FONT_SIZE["SMALL"], marginRight: SPACING["MEDIUM"] }}>
-								{/* デザインを整える */}
-								!{area}
+								{/* デザインを整える */}!{area}
 							</span>
 						) : (
 							""
