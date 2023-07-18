@@ -5,6 +5,7 @@
 body {
 	font-family: "Kiwi Maru", serif;
 	background-color: #f8f8f8;
+	letter-spacing: 0.05em;
 }
 
 img {
@@ -18,4 +19,12 @@ button {
 a {
 	text-decoration: none;
 	color: inherit;
+}
+
+iframe {
+	width: 100%;
+}
+
+.line-height {
+	line-height: 1.8;
 }
