@@ -24,8 +24,8 @@ const BOXES_STYLE = {
 	marginTop: "31px",
 };
 
-const TagArea = ({ width, tags }) => {
-	const styleMerged = mergeStyle(DEFAULT_STYLE, { width: width });
+const TagArea = ({ width, tags, margin }) => {
+	const styleMerged = mergeStyle(DEFAULT_STYLE, { width: width }, { margin: margin });
 	return (
 		<div style={styleMerged}>
 			<h2>タグ</h2>
