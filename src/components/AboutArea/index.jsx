@@ -8,6 +8,7 @@ const DEFAULT_AREA = {
 	height: "100vh",
 	margin: "auto",
 	display: "flex",
+	marginBottom: "100px",
 };
 
 const DEFAULT_LEFT = {
