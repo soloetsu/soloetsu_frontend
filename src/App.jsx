@@ -16,6 +16,7 @@ import FooterTest from "./pages/FooterTest";
 import HeaderTest from "./pages/HeaderTest";
 import PlanTest from "./pages/PlanTest";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import GoListsTest from "./pages/GoListsTest";
 
 function App() {
 	return (
@@ -35,6 +36,7 @@ function App() {
 				<Route path="/footerTest" element={<FooterTest />} />
 				<Route path="/HeaderTest" element={<HeaderTest />} />
 				<Route path="/planTest" element={<PlanTest />} />
+				<Route path="/goListsTest" element={<GoListsTest />} />
 			</Routes>
 		</Router>
 	);
