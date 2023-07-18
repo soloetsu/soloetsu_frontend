@@ -19,7 +19,7 @@ const DEFAULT_IMG = {
 const Card = ({ url, img, context, tags }) => {
 	return (
 		<>
-			<div style={DEFAULT_CARD}>
+			<div style={DEFAULT_CARD} className="hover">
 				<a href={url}>
 					<img src={img} alt="画像" style={DEFAULT_IMG} />
 				</a>

@@ -1,0 +1,14 @@
+.hover,
+.hover img {
+	transition: transform 0.4s;
+}
+
+.hover:hover .hover_up {
+	transform: translate(0, -2px);
+}
+
+.hover:hover img {
+	opacity: 0.85;
+	filter: brightness(105%);
+	transform: translate(0, -2px);
+}

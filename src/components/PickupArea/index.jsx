@@ -1,6 +1,7 @@
 import React from "react";
 import Heading from "@/components/general/Heading";
 import FONT_SIZE from "@/utils/fontSize";
+import "./hover.css";
 
 const DEFAULT_AREA = {
 	width: "80%",
@@ -23,7 +24,7 @@ const DEFAULT_BOX = {
 const DEFAULT_TITLE = {
 	MsWritingMode: "tb-rl",
 	writingMode: "vertical-rl",
-	fontSize: FONT_SIZE["SMALL"],
+	fontSize: FONT_SIZE["MEDIUM"],
 	marginTop: "65px",
 	marginRight: "15px",
 };
@@ -85,16 +86,18 @@ const DEFAULT_BIGTEXT = {
 const PickupArea = ({ props }) => {
 	return (
 		<div style={DEFAULT_AREA}>
-			<Heading context="定番のプラン" />
+			<Heading context="定番のプラン" fontSize="LARGE" />
 			<div style={DEFAULT_BOX_AREA}>
 				{props.map((prop, index) => {
 					return (
-						<div style={DEFAULT_BOX} key={index}>
-							<p style={DEFAULT_TITLE}>{prop.title}</p>
+						<div style={DEFAULT_BOX} key={index} className="hover">
+							<p style={DEFAULT_TITLE} className="hover_child">
+								{prop.title}
+							</p>
 							<a href={prop.url} style={{ textDecoration: "none" }}>
 								<img src={prop.img} alt="画像1" style={DEFAULT_IMG} />
 							</a>
-							<div style={DEFAULT_NUM_AREA}>
+							<div style={DEFAULT_NUM_AREA} className="hover_child">
 								<div style={DEFAULT_NUM_TITLE}>PICKUP</div>
 								<p style={DEFAULT_NUM}>{index + 1}</p>
 								<div style={DEFAULT_NUM_ALIGN}></div>
