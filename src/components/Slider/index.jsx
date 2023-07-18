@@ -5,9 +5,15 @@ import "@splidejs/react-splide/css";
 const IMG_STYLE = {
 	display: "block",
 	width: "100%",
-	height: "100%",
+	height: "60vh",
 	objectFit: "cover",
-	aspectRatio: "5 / 3",
+};
+
+const IMG_STYLE_MINI = {
+	display: "block",
+	width: "100%",
+	height: "10vh",
+	objectFit: "cover",
 };
 
 const Slider = ({ img }) => {
@@ -52,7 +58,7 @@ const Slider = ({ img }) => {
 				{img.map((url, index) => {
 					return (
 						<SplideSlide key={index}>
-							<img src={url} alt={url} style={IMG_STYLE} />
+							<img src={url} alt={url} style={IMG_STYLE_MINI} />
 						</SplideSlide>
 					);
 				})}
