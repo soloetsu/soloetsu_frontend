@@ -2,10 +2,6 @@ import React, { useRef, useEffect } from "react";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
 
-const DEFAULT_STYLE = {
-	width: "60%",
-};
-
 const IMG_STYLE = {
 	display: "block",
 	width: "100%",
@@ -28,41 +24,39 @@ const Slider = ({ img }) => {
 	}, [primaryRef, secondaryRef]);
 
 	return (
-		<>
-			<div style={DEFAULT_STYLE}>
-				<Splide
-					ref={primaryRef}
-					options={{
-						type: "fade",
-					}}
-				>
-					{img.map((url, index) => {
-						return (
-							<SplideSlide key={index}>
-								<img src={url} alt={url} style={IMG_STYLE} />
-							</SplideSlide>
-						);
-					})}
-				</Splide>
-				<Splide
-					ref={secondaryRef}
-					options={{
-						type: "slide",
-						pagination: false,
-						isNavigation: true,
-						perPage: 6,
-					}}
-				>
-					{img.map((url, index) => {
-						return (
-							<SplideSlide key={index}>
-								<img src={url} alt={url} style={IMG_STYLE} />
-							</SplideSlide>
-						);
-					})}
-				</Splide>
-			</div>
-		</>
+		<div>
+			<Splide
+				ref={primaryRef}
+				options={{
+					type: "fade",
+				}}
+			>
+				{img.map((url, index) => {
+					return (
+						<SplideSlide key={index}>
+							<img src={url} alt={url} style={IMG_STYLE} />
+						</SplideSlide>
+					);
+				})}
+			</Splide>
+			<Splide
+				ref={secondaryRef}
+				options={{
+					type: "slide",
+					pagination: false,
+					isNavigation: true,
+					perPage: 6,
+				}}
+			>
+				{img.map((url, index) => {
+					return (
+						<SplideSlide key={index}>
+							<img src={url} alt={url} style={IMG_STYLE} />
+						</SplideSlide>
+					);
+				})}
+			</Splide>
+		</div>
 	);
 };
 
