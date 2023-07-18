@@ -28,13 +28,12 @@ const DEFAULT_IMG = {
 const DEFAULT_CONTENT = {
 	display: "flex",
 	flexDirection: "column",
-	marginLeft: "50px",
-	marginTop: SPACING["MEDIUM"],
+	margin: "20px 10px 20px 50px ",
 	whiteSpace: "nowrap", // 改行されない
 	overflow: "hidden",
 	textOverflow: "ellipsis",
 	width: "100%",
-	justifyContent: "space-around",
+	justifyContent: "space-between",
 };
 
 const List = ({ props, tag = true }) => {

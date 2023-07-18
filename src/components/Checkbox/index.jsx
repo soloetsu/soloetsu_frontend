@@ -21,6 +21,8 @@ const OFF_STYLE = {
 	color: "black",
 };
 
+const INNER = {};
+
 // onClickでCheckboxのcheckを変更する
 // checkがtrueならonClickでfalseに、falseならtrueにする
 
@@ -37,7 +39,7 @@ const Checkbox = ({ context, check = false }) => {
 				style={isChecked ? { ...BUTTON_STYLE, ...ON_STYLE } : { ...BUTTON_STYLE, ...OFF_STYLE }}
 				onClick={() => setIsChecked(!isChecked)}
 			>
-				{context}
+				<div style={{ INNER }}>{context}</div>
 			</button>
 		</div>
 	);

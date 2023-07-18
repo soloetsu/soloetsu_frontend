@@ -2,6 +2,9 @@ import React from "react";
 import Header from "@/components/Header";
 import AboutArea from "@/components/AboutArea";
 import PickupArea from "@/components/PickupArea";
+import Heading from "@/components/general/Heading";
+import List from "@/components/List";
+import GoLists from "@/components/GoLists";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -17,6 +20,12 @@ const Index = () => {
 		height: "100%",
 	};
 
+	const LIST_AREA = {
+		display: "grid",
+		gap: "40px",
+		margin: "60px 0 0 0",
+	};
+
 	return (
 		<>
 			<Header unique={true} />
@@ -25,6 +34,59 @@ const Index = () => {
 			</div>
 			<AboutArea />
 			<PickupArea />
+			<div style={{ width: "80%", margin: "auto" }}>
+				<Heading fontSize="LARGE" context="酒巡りの旅" />
+				<div style={LIST_AREA}>
+					<List
+						props={{
+							plan_id: 1,
+							name: "お酒飲み歩き、上越酒造・ワイナリーツアー",
+							description:
+								"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+							tags: ["#お酒", "#趣味"],
+							img: "https://fujifilmsquare.jp/assets/img/column/column_24_01.jpg",
+						}}
+					/>
+					<List
+						props={{
+							plan_id: 1,
+							name: "お酒飲み歩き、上越酒造・ワイナリーツアー",
+							description:
+								"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+							tags: ["#お酒", "#趣味"],
+							img: "https://fujifilmsquare.jp/assets/img/column/column_24_01.jpg",
+						}}
+					/>
+				</div>
+				<GoLists context="一覧へ" />
+			</div>
+
+			<div style={{ width: "80%", margin: "auto" }}>
+				<Heading fontSize="LARGE" context="酒巡りの旅" />
+				<div style={LIST_AREA}>
+					<List
+						props={{
+							plan_id: 1,
+							name: "お酒飲み歩き、上越酒造・ワイナリーツアー",
+							description:
+								"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+							tags: ["#お酒", "#趣味"],
+							img: "https://fujifilmsquare.jp/assets/img/column/column_24_01.jpg",
+						}}
+					/>
+					<List
+						props={{
+							plan_id: 1,
+							name: "お酒飲み歩き、上越酒造・ワイナリーツアー",
+							description:
+								"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+							tags: ["#お酒", "#趣味"],
+							img: "https://fujifilmsquare.jp/assets/img/column/column_24_01.jpg",
+						}}
+					/>
+				</div>
+				<GoLists context="一覧へ" />
+			</div>
 			<Footer />
 		</>
 	);
