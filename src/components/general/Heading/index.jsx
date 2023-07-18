@@ -1,11 +1,12 @@
 import React from "react";
 import FONT_SIZE from "@/utils/fontSize";
 
-const Heading = ({ fontSize, context }) => {
+const Heading = ({ fontSize, context, margin }) => {
 	const headingStyle = {
 		fontSize: FONT_SIZE[fontSize],
 		position: "relative",
 		marginBottom: "40px",
+		margin: margin,
 	};
 
 	const underlineStyle = {
