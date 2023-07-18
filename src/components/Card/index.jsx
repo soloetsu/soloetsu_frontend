@@ -35,7 +35,7 @@ const Card = ({ type, id, img, context, tags }) => {
 					<p>
 						{tags.map((tag, index) => (
 							<span style={{ fontSize: FONT_SIZE["SMALL"], marginRight: SPACING["MEDIUM"] }} key={index}>
-								{tag}
+								#{tag}
 							</span>
 						))}
 					</p>

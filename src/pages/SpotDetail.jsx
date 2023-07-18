@@ -77,7 +77,11 @@ const SpotDetail = () => {
 							</p>
 							<Title icon={<TagIcon />} context="タグ" />
 							<div style={{ display: "flex" }}>
-								<p>{spot.tags}</p>
+								{spot.tags
+									? spot.tags.map((tag, index) => {
+										return <p key={index}>#{tag}</p>;
+									})
+									: ""}
 							</div>
 						</div>
 					</div>
