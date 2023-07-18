@@ -48,7 +48,7 @@ const PlanList = () => {
 	return (
 		<>
 			<Header />
-			<SubVisual context="プラン一覧" />
+			<SubVisual context="プラン一覧" image="./jpg/plan.jpg" />
 			<div style={CONTENT_AREA}>
 				<div style={TAGS_LIST}>
 					{plansData.tags && (

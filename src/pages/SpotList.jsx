@@ -47,7 +47,7 @@ const SpotList = () => {
 	return (
 		<>
 			<Header />
-			<SubVisual context="スポット一覧" />
+			<SubVisual context="スポット一覧" image="./jpg/spot.jpg" />
 			<div style={CONTENT_AREA}>
 				<div style={TAGS_LIST}>
 					{spotsData.tags && (

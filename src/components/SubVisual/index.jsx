@@ -21,7 +21,7 @@ const DEFAULT_STYLE_IMG = {
 	height: "350px",
 };
 
-const SubVisual = ({ context, outline }) => {
+const SubVisual = ({ context, outline, image }) => {
 	return (
 		<div style={DEFAULT_AREA}>
 			<div style={DEFAULT_CONTEXT}>
@@ -30,7 +30,7 @@ const SubVisual = ({ context, outline }) => {
 				<p style={{ fontSize: FONT_SIZE["SMALL"] }}>{outline}</p>
 			</div>
 			{/* TODO 画像差し替え */}
-			<img style={DEFAULT_STYLE_IMG} src="./jpg/sub.jpg" alt="" />
+			<img style={DEFAULT_STYLE_IMG} src={image} alt="" />
 		</div>
 	);
 };
