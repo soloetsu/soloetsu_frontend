@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Button = ({ style, direction, totalPages, currentPage, setCurrentPage }) => {
+const Arrow = ({ style, direction, totalPages, currentPage, setCurrentPage }) => {
 	const DEFAULT_STYLE = style;
 	const HOVER_STYLE = {
 		...DEFAULT_STYLE,
@@ -29,4 +29,4 @@ const Button = ({ style, direction, totalPages, currentPage, setCurrentPage }) =
 	);
 };
 
-export default Button;
+export default Arrow;

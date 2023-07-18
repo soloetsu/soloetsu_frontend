@@ -43,7 +43,7 @@ const List = ({ props, tag = true }) => {
 			<div style={DEFAULT_CONTENT}>
 				<div style={{ width: "100%" }}>
 					<div style={{ display: "flex" }}>
-						<Title icon={<Plan />} context={props.name} fontSize="MEDIUM" />
+						<Title icon={<Plan />} context={props.name} />
 					</div>
 					{tag && (
 						<div style={{ display: "flex", marginTop: SPACING["SMALL"] }}>

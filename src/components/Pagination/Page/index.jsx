@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Button = ({ style, pageNumber, currentPage, setCurrentPage }) => {
+const Page = ({ style, pageNumber, currentPage, setCurrentPage }) => {
 	const DEFAULT_STYLE = style;
 
 	const ACTIVE_STYLE = {
@@ -28,4 +28,4 @@ const Button = ({ style, pageNumber, currentPage, setCurrentPage }) => {
 	);
 };
 
-export default Button;
+export default Page;

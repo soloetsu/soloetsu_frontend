@@ -5,7 +5,6 @@ import mergeStyle from "@/utils/mergeStyle";
 const DEFAULT_STYLE = {
 	display: "flex",
 	alignItems: "center",
-	fontSize: FONT_SIZE["MEDIUM"],
 };
 
 const TEXT_STYLE = {
@@ -17,7 +16,7 @@ const TEXT_STYLE = {
 	justifyContent: "center",
 };
 
-const Title = ({ icon, context, fontSize }) => {
+const Title = ({ icon, context, fontSize = "MEDIUM" }) => {
 	const styleMerged = mergeStyle(DEFAULT_STYLE, { fontSize: FONT_SIZE[fontSize] });
 	return (
 		<div style={styleMerged}>
