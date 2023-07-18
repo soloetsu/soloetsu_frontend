@@ -6,7 +6,7 @@ import { Buffer } from "buffer";
 const PLAN_STYLE = {
 	display: "flex",
 	flexDirection: "column",
-	width: "60%",
+	width: "100%",
 	margin: "auto",
 	marginBottom: "24px",
 };
@@ -26,7 +26,7 @@ const BORDER_STYLE = {
 	borderLeft: "3px solid #D9D9D9",
 	marginLeft: "3.5%",
 	paddingRight: "5%",
-	height: "400px",
+	// height: "400px",
 };
 
 const DEFAULT_NUM_AREA = {

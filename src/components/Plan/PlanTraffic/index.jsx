@@ -5,7 +5,7 @@ import { ReactComponent as Car } from "@/assets/svg/car.svg";
 const PLAN_STYLE = {
 	display: "flex",
 	flexDirection: "column",
-	width: "60%",
+	width: "100%",
 	margin: "auto",
 	marginBottom: "24px",
 };
