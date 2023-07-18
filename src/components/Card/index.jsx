@@ -12,7 +12,8 @@ const DEFAULT_CARD = {
 const DEFAULT_IMG = {
 	display: "flex",
 	width: "100%",
-	height: "23vw",
+	aspectRatio: "4 / 3",
+	// height: "23vw",
 	borderRadius: "0px 20px 0px",
 	filter: "drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))",
 };
