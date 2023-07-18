@@ -2,7 +2,7 @@ import React from "react";
 
 const MAIN = {
 	width: "100%" /* 画面の幅 */,
-	height: "60vh" /* 画面の高さ */,
+	height: "45vh" /* 画面の高さ */,
 	display: "flex",
 	justifyContent: "center",
 	alignItems: "center",
@@ -15,7 +15,7 @@ const FONT = {
 	alignItems: "center",
 	justifyContent: "center",
 	position: "absolute",
-	top: "48%",
+	top: "76%",
 	left: "50%",
 	transform: "translate(-50%, -50%)",
 	padding: "1px",
@@ -25,7 +25,7 @@ const LINE = {
 	justifyContent: "center",
 	color: "white",
 	position: "absolute",
-	top: "40%",
+	top: "62%",
 	left: "11%",
 	width: "79%",
 	alignItems: "center",
@@ -33,10 +33,10 @@ const LINE = {
 
 const LOGO = {
 	position: "absolute",
-	top: "22%",
+	top: "35%",
 	left: "51%",
 	transform: "translate(-50%, -50%)",
-	width: "130px",
+	width: "120px",
 };
 
 const MAIN_COVER = {

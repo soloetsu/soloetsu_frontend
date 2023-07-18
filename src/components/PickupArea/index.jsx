@@ -9,6 +9,8 @@ import { Link } from "react-router-dom";
 const DEFAULT_AREA = {
 	width: "80%",
 	margin: "auto",
+	height: "100vh",
+	position: "relative",
 };
 
 const DEFAULT_BOX_AREA = {
@@ -83,7 +85,8 @@ const DEFAULT_BIGTEXT = {
 	fontFamily: "'playfair display', serif",
 	color: "#B1C7CF",
 	letterSpacing: "20px",
-	right: "9%",
+	right: "-1%",
+	bottom: "40px",
 };
 
 const PickupArea = () => {
