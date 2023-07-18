@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Header from "@/components/Header";
 import Breadcrumb from "@/components/Breadcrumb";
 import ImageTile from "@/components/ImageTile";
+import Footer from "@/components/Footer";
 import { useLocation } from "react-router-dom";
 import axios from "axios";
 import { Buffer } from "buffer";
@@ -40,6 +41,7 @@ const PlanDetail = () => {
 					],
 				}}
 			/>
+			<Footer />
 		</>
 	);
 };
