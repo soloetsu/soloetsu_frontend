@@ -69,7 +69,7 @@ const PlanList = () => {
 						plansData.plans
 							.filter((plan) => {
 								if (tags.length === 0) return plan;
-								return tags.every((tag) => plan.tags.includes(tag));
+								return tags.some((tag) => plan.tags.includes(tag));
 							})
 							.slice((currentPage - 1) * 4, currentPage * 4)
 							.map((plan, index) => (

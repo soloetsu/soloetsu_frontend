@@ -90,79 +90,47 @@ const DEFAULT_BIGTEXT = {
 };
 
 const PickupArea = () => {
-	const [name, useName] = useState("");
-	const [imageData, useImageData] = useState(null);
+	const [pickup, usePickup] = useState([]);
 	useEffect(() => {
 		getPickup();
 	}, []);
 
 	const getPickup = async () => {
 		const res = await axios.get("http://soloetsu.haltokyo.live/api/plans/pickup");
-		useName(res.data[0].name);
-		useImageData(res.data[0].image);
+		console.log(res.data);
+		usePickup(res.data);
 	};
 
 	return (
 		<div style={DEFAULT_AREA}>
 			<Heading context="定番のプラン" fontSize="LARGE" />
 			<div style={DEFAULT_BOX_AREA}>
-				<div style={DEFAULT_BOX} className="hover">
-					<p style={DEFAULT_TITLE}>{name}</p>
-					<Link to="/plan" style={{ textDecoration: "none" }}>
-						{imageData ? (
-							<img
-								src={`data:image/jpeg;base64,${Buffer.from(imageData).toString("base64")}`}
-								alt="画像1"
-								style={DEFAULT_IMG}
-							/>
-						) : (
-							<div>Loading...</div>
-						)}
-					</Link>
-					<div style={DEFAULT_NUM_AREA} className="hover_child">
-						<div style={DEFAULT_NUM_TITLE}>PICKUP</div>
-						<p style={DEFAULT_NUM}>01</p>
-						<div style={DEFAULT_NUM_ALIGN}></div>
-					</div>
-				</div>
-				<div style={DEFAULT_BOX} className="hover">
-					<p style={DEFAULT_TITLE}>{name}</p>
-					<Link to="/plan" style={{ textDecoration: "none" }}>
-						{imageData ? (
-							<img
-								src={`data:image/jpeg;base64,${Buffer.from(imageData).toString("base64")}`}
-								alt="画像1"
-								style={DEFAULT_IMG}
-							/>
-						) : (
-							<div>Loading...</div>
-						)}
-					</Link>
-					<div style={DEFAULT_NUM_AREA} className="hover_child">
-						<div style={DEFAULT_NUM_TITLE}>PICKUP</div>
-						<p style={DEFAULT_NUM}>02</p>
-						<div style={DEFAULT_NUM_ALIGN}></div>
-					</div>
-				</div>
-				<div style={DEFAULT_BOX} className="hover">
-					<p style={DEFAULT_TITLE}>{name}</p>
-					<Link to="/plan" style={{ textDecoration: "none" }}>
-						{imageData ? (
-							<img
-								src={`data:image/jpeg;base64,${Buffer.from(imageData).toString("base64")}`}
-								alt="画像1"
-								style={DEFAULT_IMG}
-							/>
-						) : (
-							<div>Loading...</div>
-						)}
-					</Link>
-					<div style={DEFAULT_NUM_AREA} className="hover_child">
-						<div style={DEFAULT_NUM_TITLE}>PICKUP</div>
-						<p style={DEFAULT_NUM}>03</p>
-						<div style={DEFAULT_NUM_ALIGN}></div>
-					</div>
-				</div>
+				{pickup.map((plan, index) => {
+					return (
+						<div style={DEFAULT_BOX} className="hover" key={index}>
+							<p style={DEFAULT_TITLE}>{plan.name}</p>
+							<Link
+								to={{ pathname: "planDetail", search: `?id=${plan.id}` }}
+								style={{ textDecoration: "none" }}
+							>
+								{plan.image ? (
+									<img
+										src={`data:image/jpeg;base64,${Buffer.from(plan.image).toString("base64")}`}
+										alt={"画像" + index}
+										style={DEFAULT_IMG}
+									/>
+								) : (
+									<div>Loading...</div>
+								)}
+							</Link>
+							<div style={DEFAULT_NUM_AREA} className="hover_child">
+								<div style={DEFAULT_NUM_TITLE}>PICKUP</div>
+								<p style={DEFAULT_NUM}>{index + 1}</p>
+								<div style={DEFAULT_NUM_ALIGN}></div>
+							</div>
+						</div>
+					);
+				})}
 				<div style={DEFAULT_BACK}></div>
 			</div>
 			<div style={DEFAULT_BIGTEXT}>PICKUP</div>
