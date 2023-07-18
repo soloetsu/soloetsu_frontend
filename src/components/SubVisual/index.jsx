@@ -30,7 +30,7 @@ const SubVisual = ({ context, outline }) => {
 				<p style={{ fontSize: FONT_SIZE["SMALL"] }}>{outline}</p>
 			</div>
 			{/* TODO 画像差し替え */}
-			<img style={DEFAULT_STYLE_IMG} src="https://fujifilmsquare.jp/assets/img/column/column_24_01.jpg" alt="" />
+			<img style={DEFAULT_STYLE_IMG} src="./jpg/sub.jpg" alt="" />
 		</div>
 	);
 };
