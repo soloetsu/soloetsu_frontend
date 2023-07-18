@@ -8,7 +8,7 @@ const DEFAULT_AREA = {
 	height: "100vh",
 	margin: "auto",
 	display: "flex",
-	marginBottom: "100px",
+	marginBottom: "0px",
 };
 
 const DEFAULT_LEFT = {
@@ -103,9 +103,8 @@ const AboutArea = () => {
 			</div>
 			<div style={DEFAULT_RIGHT}>
 				<div style={DEFAULT_IMG_AREA}>
-					{/* TODO 画像差し替え */}
-					<img src="https://picsum.photos/300/300" alt="Image01" style={IMG_1} />
-					<img src="https://picsum.photos/200/250" alt="Image02" style={IMG_2} />
+					<img src="/jpg/AboutFront.jpg" alt="Image01" style={IMG_1} />
+					<img src="/jpg/AboutBack.jpg" alt="Image02" style={IMG_2} />
 				</div>
 			</div>
 		</div>

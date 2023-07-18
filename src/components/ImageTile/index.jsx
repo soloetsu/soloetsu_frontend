@@ -42,7 +42,9 @@ const ImageTile = ({ props }) => {
 		<>
 			<div style={DEFAULT_AREA}>
 				<Title icon={<Plan />} context={props.title} fontSize="LARGE" />
-				<div style={OVERVIEW}>{props.overview}</div>
+				<div style={OVERVIEW}>
+					<p dangerouslySetInnerHTML={{ __html: props.overview }} />
+				</div>
 				<div style={{ display: "flex", justifyContent: "space-between", height: "26vw" }}>
 					<div style={{ width: "50%" }}>
 						<img src={props.images[0]} alt="大画像" style={BIG_IMG} />

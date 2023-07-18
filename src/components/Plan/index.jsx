@@ -9,7 +9,7 @@ const Plan = ({ roots }) => {
 				if (root.spot_id) {
 					return <PlanSpot root={root} key={index} last={index === roots.length - 1} />;
 				} else {
-					return <PlanTraffic title={root.title} link={root.link} type={root.type} key={index} />;
+					return <PlanTraffic root={root} key={index} />;
 				}
 			})}
 		</>

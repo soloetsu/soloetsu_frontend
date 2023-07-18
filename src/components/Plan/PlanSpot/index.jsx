@@ -1,7 +1,7 @@
 import React from "react";
 import FONT_SIZE from "@/utils/fontSize";
-// import Heading from "@/components/general/Heading";
 import List from "@/components/List";
+import { Buffer } from "buffer";
 
 const PLAN_STYLE = {
 	display: "flex",
@@ -65,16 +65,16 @@ const PlanSpot = ({ root, last }) => {
 					<p style={DEFAULT_NUM}>01</p>
 					<div style={DEFAULT_NUM_ALIGN}></div>
 				</div>
-				<p style={{ fontSize: FONT_SIZE["MEDIUM"] }}>{root.title}</p>
+				<p style={{ fontSize: FONT_SIZE["MEDIUM"] }}>{root.comment}</p>
 			</div>
 			<div style={SPOT_STYLE}>
 				{last ? null : <div style={BORDER_STYLE}></div>}
 				<List
 					props={{
-						plan_id: 1,
-						name: root.name,
-						overview: root.overview,
-						img: "https://fujifilmsquare.jp/assets/img/column/column_24_01.jpg",
+						plan_id: root.spot_id,
+						name: root.spot.name,
+						overview: root.spot.overview,
+						img: `data:image/jpeg;base64,${Buffer.from(root.spot.image).toString("base64")}`,
 					}}
 					tag={false}
 				/>

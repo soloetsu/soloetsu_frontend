@@ -9,8 +9,6 @@ const DEFAULT_STYLE = {
 	display: "flex",
 	backgroundColor: "#F8F8F8",
 	padding: "0 5%",
-	//onoff
-	boxShadow: "2px 4px 4px rgba(0, 0, 0, 0.1)",
 };
 
 const DEFAULT_NAVIGATION = {
@@ -31,16 +29,16 @@ const LEFT = {
 	height: "100%",
 };
 
-// const DEFAULT_CIRCLE = {
-// 	position: "absolute",
-// 	width: "300px",
-// 	height: "300px",
-// 	borderRadius: "50%",
-// 	backgroundColor: "#f8f8f8",
-// 	top: "50px",
-// 	left: "50%",
-// 	transform: "translate(-50%, -50%)",
-// };
+const DEFAULT_CIRCLE_UNIQUE = {
+	position: "absolute",
+	width: "300px",
+	height: "300px",
+	borderRadius: "50%",
+	backgroundColor: "#f8f8f8",
+	top: "50px",
+	left: "50%",
+	transform: "translate(-50%, -50%)",
+};
 
 const DEFAULT_CIRCLE = {
 	position: "absolute",
@@ -70,11 +68,11 @@ const LOGO = {
 	width: "83%",
 };
 
-const Header = () => {
+const Header = ({ unique = false }) => {
 	return (
-		<div style={DEFAULT_STYLE}>
+		<div style={unique ? DEFAULT_STYLE : { ...DEFAULT_STYLE, boxShadow: "2px 4px 4px rgba(0, 0, 0, 0.1)" }}>
 			<div style={LEFT}></div>
-			<div style={DEFAULT_CIRCLE}>
+			<div style={unique ? DEFAULT_CIRCLE_UNIQUE : DEFAULT_CIRCLE}>
 				<a href="" style={LOGO}>
 					<img src="/png/logo.png" />
 				</a>

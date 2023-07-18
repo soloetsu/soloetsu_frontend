@@ -65,9 +65,8 @@ const List = ({ props, tag = true }) => {
 							marginTop: SPACING["LARGE"],
 							whiteSpace: "pre-line", // 改行するようにしたい
 						}}
-					>
-						{props.overview}
-					</p>
+						dangerouslySetInnerHTML={{ __html: props.overview }}
+					/>
 				</div>
 				<div
 					style={{

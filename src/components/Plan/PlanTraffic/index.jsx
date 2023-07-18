@@ -1,5 +1,4 @@
 import React from "react";
-// import Heading from "@/components/general/Heading";
 import FONT_SIZE from "@/utils/fontSize";
 import { ReactComponent as Car } from "@/assets/svg/car.svg";
 
@@ -35,18 +34,20 @@ const ICON_STYLE = {
 	marginRight: "40px",
 };
 
-const PlanTraffic = ({ title, link }) => {
+const PlanTraffic = ({ root }) => {
 	return (
 		<div style={PLAN_STYLE}>
 			<div style={CONTEXT_STYLE}>
 				<div>
 					<Car style={ICON_STYLE} />
 				</div>
-				<p style={{ fontSize: FONT_SIZE["MEDIUM"] }}>{title}</p>
+				<p style={{ fontSize: FONT_SIZE["MEDIUM"] }}>{root.comment}</p>
 			</div>
 			<div style={SPOT_STYLE}>
 				<div style={BORDER_STYLE}></div>
-				<p>{link}</p>
+				<p>
+					<a href={root.link}>GoogleMapはこちら</a>
+				</p>
 			</div>
 		</div>
 	);

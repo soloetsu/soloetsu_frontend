@@ -7,8 +7,8 @@ import Footer from "@/components/Footer";
 const Index = () => {
 	return (
 		<>
-			<Header />
-			{/* TODO Headerの付いてくるやつ */}
+			<Header unique={true} />
+			<img src="/jpg/MainVisual.jpg" alt="top" />
 			<AboutArea />
 			<PickupArea />
 			<Footer />
