@@ -61,11 +61,12 @@ const List = ({ props, tag = true }) => {
 					)}
 					<p
 						style={{
-							fontSize: FONT_SIZE["MEDIUM"],
+							fontSize: FONT_SIZE["SMALL"],
 							marginTop: SPACING["LARGE"],
 							whiteSpace: "pre-line", // 改行するようにしたい
 						}}
 						dangerouslySetInnerHTML={{ __html: props.overview }}
+						className="line-height"
 					/>
 				</div>
 				<div
