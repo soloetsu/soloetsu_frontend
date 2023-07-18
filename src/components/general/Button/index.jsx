@@ -11,6 +11,7 @@ const DEFAULT_STYLE = {
 	marginTop: SPACING["LARGE"],
 	padding: "3px",
 	border: "none",
+	transition: "0.4s",
 };
 
 const INNER = {
@@ -25,6 +26,7 @@ const INNER = {
 	cursor: "pointer",
 	height: "100%",
 	marginLeft: "0.2px",
+	transition: "0.4s",
 };
 
 const ARROW_AREA = {
@@ -33,6 +35,7 @@ const ARROW_AREA = {
 	height: "20px",
 	borderRadius: "50%",
 	position: "relative",
+	transition: "0.4s",
 };
 
 const ARROW = {
@@ -47,21 +50,23 @@ const ARROW = {
 	left: "4.5px",
 	bottom: "0",
 	margin: "auto",
-	transition: "0.3s",
+	transition: "0.4s",
 };
 
 const Button = ({ url, context }) => {
 	return (
-		<a href={url}>
-			<button style={DEFAULT_STYLE}>
-				<div style={INNER}>
-					{context}
-					<div style={ARROW_AREA}>
-						<span style={ARROW}></span>
+		<div className="button hover">
+			<a href={url}>
+				<button style={DEFAULT_STYLE}>
+					<div style={INNER} className="inner">
+						{context}
+						<div style={ARROW_AREA} className="arrowarea">
+							<span style={ARROW}></span>
+						</div>
 					</div>
-				</div>
-			</button>
-		</a>
+				</button>
+			</a>
+		</div>
 	);
 };
 

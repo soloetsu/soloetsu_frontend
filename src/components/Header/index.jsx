@@ -71,10 +71,13 @@ const LOGO = {
 
 const Header = ({ unique = false }) => {
 	return (
-		<div style={unique ? DEFAULT_STYLE : { ...DEFAULT_STYLE, boxShadow: "2px 4px 4px rgba(0, 0, 0, 0.1)" }}>
+		<div
+			style={unique ? DEFAULT_STYLE : { ...DEFAULT_STYLE, boxShadow: "2px 4px 4px rgba(0, 0, 0, 0.1)" }}
+			className="header"
+		>
 			<div style={LEFT}></div>
 			<div style={unique ? DEFAULT_CIRCLE_UNIQUE : DEFAULT_CIRCLE}>
-				<Link to="/" style={LOGO}>
+				<Link to="/" style={LOGO} className="hover">
 					<img src="/png/logo.png" />
 				</Link>
 			</div>
@@ -82,25 +85,25 @@ const Header = ({ unique = false }) => {
 			<div style={RIGHT}>
 				<div style={DEFAULT_NAVIGATION}>
 					<div>
-						<Link to="/planList">
+						<Link to="/planList" className="hover">
 							<Plan style={DEFAULT_SVG} />
 							<p>プラン</p>
 						</Link>
 					</div>
 					<div>
-						<Link to="/spotList">
+						<Link to="/spotList" className="hover">
 							<Spot style={DEFAULT_SVG} />
 							<p>スポット</p>
 						</Link>
 					</div>
 					<div>
-						<Link to="/">
+						<Link to="/" className="hover">
 							<Safety style={DEFAULT_SVG} />
 							<p>セーフティ</p>
 						</Link>
 					</div>
 					<div>
-						<Link to="/">
+						<Link to="/" className="hover">
 							<Traffic style={DEFAULT_SVG} />
 							<p>交通情報</p>
 						</Link>

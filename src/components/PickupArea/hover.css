@@ -1,6 +1,7 @@
 .hover,
-.hover img {
-	transition: transform 0.4s;
+.hover img,
+.transiton {
+	transition: transform 0.4s !important;
 }
 
 .hover:hover .hover_up {
@@ -11,4 +12,34 @@
 	opacity: 0.85;
 	filter: brightness(105%);
 	transform: translate(0, -2px);
+}
+
+/* tagarea */
+
+.tagarea .hover:hover {
+	transform: translate(0, -2px);
+}
+
+/* golist */
+
+.golist :hover span {
+	right: -0.3em !important;
+	background-color: #ffa800 !important;
+}
+
+/* button */
+
+.button :hover .inner {
+	background-image: linear-gradient(90deg, #fff 0%, #fff 100%) !important;
+	color: #ffa800 !important;
+}
+
+/* header */
+
+.header .hover:hover {
+	transform: translate(0, -2px);
+}
+
+.header .hover:hover {
+	color: #ffa800 !important;
 }

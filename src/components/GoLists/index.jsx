@@ -41,11 +41,13 @@ const AFTER = {
 
 const GOLists = ({ url, context }) => {
 	return (
-		<a href={url} style={A}>
-			{context}
-			<span style={BEFORE}></span>
-			<span style={AFTER}></span>
-		</a>
+		<div className="golist hover">
+			<a href={url} style={A}>
+				{context}
+				<span style={BEFORE}></span>
+				<span style={AFTER}></span>
+			</a>
+		</div>
 	);
 };
 
