@@ -7,6 +7,7 @@ const IMG_STYLE = {
 	width: "100%",
 	height: "100%",
 	objectFit: "cover",
+	aspectRatio: "5 / 3",
 };
 
 const Slider = ({ img }) => {
