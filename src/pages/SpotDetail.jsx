@@ -25,7 +25,6 @@ const SpotDetail = () => {
 	const getSpot = async () => {
 		const res = await axios.get(`http://soloetsu.haltokyo.live/api/spots/detail/${spotId}`);
 		useSpot(res.data);
-		console.log(res.data);
 	};
 
 	const convertImage = (images) => {

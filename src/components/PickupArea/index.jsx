@@ -97,7 +97,6 @@ const PickupArea = () => {
 
 	const getPickup = async () => {
 		const res = await axios.get("http://soloetsu.haltokyo.live/api/plans/pickup");
-		console.log(res.data);
 		usePickup(res.data);
 	};
 

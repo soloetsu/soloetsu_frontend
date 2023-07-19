@@ -23,7 +23,6 @@ const PlanDetail = () => {
 	const [roots, useRoots] = useState([]);
 	const getRoots = async () => {
 		const res = await axios.get(`http://soloetsu.haltokyo.live/api//roots/${planId}`);
-		console.log(res.data);
 		useRoots(res.data);
 	};
 	useEffect(() => {

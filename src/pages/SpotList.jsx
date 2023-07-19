@@ -39,7 +39,6 @@ const SpotList = () => {
 
 	const getSpotsData = async () => {
 		const res = await axios.get("http://soloetsu.haltokyo.live/api/spots");
-		console.log(res.data);
 		useSpotsData(res.data);
 	};
 

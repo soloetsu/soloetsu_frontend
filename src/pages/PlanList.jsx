@@ -39,7 +39,6 @@ const PlanList = () => {
 
 	const getPlansData = async () => {
 		const res = await axios.get("http://soloetsu.haltokyo.live/api/plans");
-		console.log(res.data);
 		usePlansData(res.data);
 	};
 
