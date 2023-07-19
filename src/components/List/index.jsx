@@ -55,7 +55,7 @@ const List = ({ props, type, tag = true }) => {
 										style={{ fontSize: FONT_SIZE["SMALL"], marginRight: SPACING["MEDIUM"] }}
 										key={index}
 									>
-										{tag}
+										#{tag}
 									</span>
 								))}
 							</p>

@@ -124,7 +124,7 @@ const PickupArea = () => {
 							</Link>
 							<div style={DEFAULT_NUM_AREA} className="hover_child">
 								<div style={DEFAULT_NUM_TITLE}>PICKUP</div>
-								<p style={DEFAULT_NUM}>{index + 1}</p>
+								<p style={DEFAULT_NUM}>{"0" + (index + 1)}</p>
 								<div style={DEFAULT_NUM_ALIGN}></div>
 							</div>
 						</div>
