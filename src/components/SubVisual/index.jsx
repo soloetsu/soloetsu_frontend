@@ -29,7 +29,6 @@ const SubVisual = ({ context, outline, image }) => {
 				<Heading fontSize="LARGE" context={context} margin="15px 0 45px 0" />
 				<p style={{ fontSize: FONT_SIZE["SMALL"] }}>{outline}</p>
 			</div>
-			{/* TODO 画像差し替え */}
 			<img style={DEFAULT_STYLE_IMG} src={image} alt="" />
 		</div>
 	);

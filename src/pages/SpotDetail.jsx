@@ -11,6 +11,7 @@ import Heading from "@/components/general/Heading";
 import { ReactComponent as SpotIcon } from "@/assets/svg/spot.svg";
 import { ReactComponent as TagIcon } from "@/assets/svg/tag.svg";
 import { ReactComponent as LinkIcon } from "@/assets/svg/link.svg";
+import { ReactComponent as SpotMini } from "@/assets/svg/spotMini.svg";
 import SPACING from "@/utils/spacing";
 
 const SpotDetail = () => {
@@ -92,8 +93,14 @@ const SpotDetail = () => {
 										);
 									})
 									: ""}
-								{/* デザインを整える */}
-								{spot.area ? <p>!{spot.area}</p> : ""}
+								{spot.area ? (
+									<p>
+										<SpotMini style={{ display: "inline-block", marginRight: SPACING["SMALL"] }} />
+										{spot.area}
+									</p>
+								) : (
+									""
+								)}
 							</div>
 						</div>
 					</div>

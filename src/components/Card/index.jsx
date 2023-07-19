@@ -2,6 +2,7 @@ import React from "react";
 import SPACING from "@/utils/spacing";
 import FONT_SIZE from "@/utils/fontSize";
 import { Link } from "react-router-dom";
+import { ReactComponent as SpotMini } from "@/assets/svg/spotMini.svg";
 
 const DEFAULT_CARD = {
 	display: "flex",
@@ -40,7 +41,8 @@ const Card = ({ type, id, img, context, tags, area }) => {
 						))}
 						{area ? (
 							<span style={{ fontSize: FONT_SIZE["SMALL"], marginRight: SPACING["MEDIUM"] }}>
-								{/* デザインを整える */}!{area}
+								<SpotMini style={{ display: "inline-block" }} />
+								{area}
 							</span>
 						) : (
 							""
